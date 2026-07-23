@@ -1,0 +1,51 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { History as HistoryIcon, Smile, Shirt } from 'lucide-react';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="history" className="py-24 bg-zinc-50 border-y border-zinc-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">{t('history.title')}</h2>
+      <div className="w-24 h-1 bg-mekong-blue mx-auto rounded-full"></div>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {/* Evolution */}
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 hover:shadow-md transition-shadow">
+        <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6">
+          <HistoryIcon className="w-7 h-7 text-mekong-blue" />
+        </div>
+        <h3 className="text-xl font-bold text-zinc-900 mb-4">{t('history.evolution.title')}</h3>
+        <p className="text-zinc-600 leading-relaxed">
+          {t('history.evolution.desc')}
+        </p>
+      </div>
+
+      {/* Textile */}
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 hover:shadow-md transition-shadow">
+        <div className="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
+          <Shirt className="w-7 h-7 text-amber-600" />
+        </div>
+        <h3 className="text-xl font-bold text-zinc-900 mb-4">{t('history.textile.title')}</h3>
+        <p className="text-zinc-600 leading-relaxed">
+          {t('history.textile.desc')}
+        </p>
+      </div>
+
+      {/* Etiquette */}
+      <div className="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100 hover:shadow-md transition-shadow">
+        <div className="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center mb-6">
+          <Smile className="w-7 h-7 text-green-600" />
+        </div>
+        <h3 className="text-xl font-bold text-zinc-900 mb-4">{t('history.etiquette.title')}</h3>
+        <p className="text-zinc-600 leading-relaxed">
+          {t('history.etiquette.desc')}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

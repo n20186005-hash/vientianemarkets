@@ -1,0 +1,114 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { Sun, Moon, MapPin, Clock, ShoppingBag, DollarSign, Navigation } from 'lucide-react';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="market-core" className="py-24 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">{t('markets.title')}</h2>
+      <div className="w-24 h-1 bg-mekong-blue mx-auto rounded-full"></div>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-12 mb-20">
+      {/* Talat Sao Card */}
+      <div className="bg-zinc-50 rounded-3xl p-8 border border-zinc-100 shadow-sm hover:shadow-xl transition-shadow relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+        <Sun className="w-12 h-12 text-amber-500 mb-6 relative z-10" />
+        <h3 className="text-2xl font-bold text-zinc-900 mb-2">{t('markets.talatSao.name')}</h3>
+        <p className="text-sm font-medium text-amber-600 mb-4">{t('markets.talatSao.type')} • {t('markets.talatSao.rating')}</p>
+        
+        <ul className="space-y-4 mb-8">
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-amber-400 rounded-full"></span>
+            <span className="text-zinc-700">{t('markets.talatSao.desc1')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-amber-400 rounded-full"></span>
+            <span className="text-zinc-700">{t('markets.talatSao.desc2')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-amber-400 rounded-full"></span>
+            <span className="text-zinc-700">{t('markets.talatSao.desc3')}</span>
+          </li>
+        </ul>
+        
+        <a href="https://maps.app.goo.gl/2zP3kvc4hLKQ7q8V6" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700">
+          <MapPin className="w-4 h-4 mr-2" />
+          {t('hero.cta')}
+        </a>
+      </div>
+
+      {/* Night Market Card */}
+      <div className="bg-zinc-900 rounded-3xl p-8 border border-zinc-800 shadow-sm hover:shadow-xl transition-shadow relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-mekong-blue/30 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+        <Moon className="w-12 h-12 text-blue-400 mb-6 relative z-10" />
+        <h3 className="text-2xl font-bold text-white mb-2">{t('markets.nightMarket.name')}</h3>
+        <p className="text-sm font-medium text-blue-400 mb-4">{t('markets.nightMarket.type')} • {t('markets.nightMarket.rating')}</p>
+        
+        <ul className="space-y-4 mb-8">
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-blue-500 rounded-full"></span>
+            <span className="text-zinc-300">{t('markets.nightMarket.desc1')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-blue-500 rounded-full"></span>
+            <span className="text-zinc-300">{t('markets.nightMarket.desc2')}</span>
+          </li>
+          <li className="flex items-start">
+            <span className="w-2 h-2 mt-2 mr-3 bg-blue-500 rounded-full"></span>
+            <span className="text-zinc-300">{t('markets.nightMarket.desc3')}</span>
+          </li>
+        </ul>
+        
+        <a href="https://maps.app.goo.gl/4opj9mpJvT2TJudD7" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300">
+          <MapPin className="w-4 h-4 mr-2" />
+          {t('markets.nightMarket.mapLink')}
+        </a>
+      </div>
+    </div>
+
+    {/* Comparison Table */}
+    <div className="bg-white border border-zinc-200 rounded-3xl shadow-sm overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-200">
+        <div className="p-6 bg-zinc-50 hidden md:block">
+          {/* Header column */}
+        </div>
+        <div className="p-6 text-center bg-amber-50/50">
+          <h4 className="font-bold text-lg text-amber-900">{t('markets.talatSao.name')}</h4>
+        </div>
+        <div className="p-6 text-center bg-blue-50/50">
+          <h4 className="font-bold text-lg text-mekong-blue">{t('markets.nightMarket.name')}</h4>
+        </div>
+
+        {/* Rows */}
+        <div className="p-6 flex items-center gap-3 font-semibold text-zinc-700 bg-zinc-50">
+          <Clock className="w-5 h-5 text-zinc-400" /> {t('markets.comparison.time')}
+        </div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.tsTime')}</div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.nmTime')}</div>
+
+        <div className="p-6 flex items-center gap-3 font-semibold text-zinc-700 bg-zinc-50">
+          <ShoppingBag className="w-5 h-5 text-zinc-400" /> {t('markets.comparison.goods')}
+        </div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.tsGoods')}</div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.nmGoods')}</div>
+
+        <div className="p-6 flex items-center gap-3 font-semibold text-zinc-700 bg-zinc-50">
+          <DollarSign className="w-5 h-5 text-zinc-400" /> {t('markets.comparison.bargain')}
+        </div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.tsBargain')}</div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.nmBargain')}</div>
+
+        <div className="p-6 flex items-center gap-3 font-semibold text-zinc-700 bg-zinc-50">
+          <Navigation className="w-5 h-5 text-zinc-400" /> {t('markets.comparison.transport')}
+        </div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.tsTransport')}</div>
+        <div className="p-6 text-center text-zinc-600">{t('markets.comparison.nmTransport')}</div>
+      </div>
+    </div>
+  </div>
+</section>

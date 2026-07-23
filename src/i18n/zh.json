@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "title": "万象核心集市全指南",
+    "morning": "早市介绍",
+    "night": "夜市介绍",
+    "compare": "日夜对比",
+    "history": "历史文化",
+    "map": "地图交通"
+  },
+  "hero": {
+    "title": "永珍早市 & 永珍夜市",
+    "subtitle": "万象两大标志性集市的完整日夜双核指南",
+    "weather": "万象实时天气",
+    "sunset": "今日日落",
+    "blueHour": "蓝调时刻",
+    "cta": "在 Google 地图查看早市位置",
+    "tags": {
+      "morning": "早市 07:00-17:00",
+      "night": "夜市 18:00-22:00"
+    }
+  },
+  "markets": {
+    "title": "双集市核心对比与介绍",
+    "talatSao": {
+      "name": "永珍早市 (Talat Sao)",
+      "type": "综合购物中心与传统小商品集市",
+      "rating": "3.9 (6,877 条评价)",
+      "desc1": "老挝传统纺织品（Lao Sinh 筒裙）",
+      "desc2": "黄金手饰与古玩小商品",
+      "desc3": "现代商场区"
+    },
+    "nightMarket": {
+      "name": "永珍夜市 (Vientiane Night Market)",
+      "type": "湄公河畔露天夜市",
+      "rating": "4.0 (3,004 条评价)",
+      "desc1": "湄公河畔 Sunset 景观",
+      "desc2": "风情印花服饰与手工艺术品",
+      "desc3": "夜间漫步路线",
+      "mapLink": "查看夜市地图"
+    },
+    "comparison": {
+      "time": "营业时间",
+      "goods": "主卖商品",
+      "bargain": "议价空间",
+      "transport": "交通建议",
+      "tsTime": "07:00 – 17:00",
+      "tsGoods": "纺织品、黄金、电子产品、纪念品",
+      "tsBargain": "可适当议价（明码标价商铺除外）",
+      "tsTransport": "公交、Tuk-tuk、Loca",
+      "nmTime": "18:00 – 22:00",
+      "nmGoods": "服饰、手工艺品、街头小吃",
+      "nmBargain": "议价空间大",
+      "nmTransport": "步行、Tuk-tuk、Loca"
+    }
+  },
+  "history": {
+    "title": "历史与文化背景",
+    "evolution": {
+      "title": "永珍早市的演变",
+      "desc": "自 20 世纪 60 年代以来，Talat Sao 一直是老挝老牌商业中心，从传统的露天市场发展为现代购物中心，同时保留了浓厚的本土商业文化。"
+    },
+    "textile": {
+      "title": "传统手工提花纺织",
+      "desc": "老挝的丝绸和棉织品不仅仅是商品，更是世代相传的文化象征，每一件手工织物都蕴含着独特的民族图腾与技艺。"
+    },
+    "etiquette": {
+      "title": "老挝购物文化礼仪",
+      "desc": "老挝人民崇尚温和的沟通方式。在市场购物时，请保持微笑和礼貌，温和地讨价还价是体验当地生活的重要部分。"
+    }
+  },
+  "gallery": {
+    "title": "照片墙",
+    "mapLink": "在 Google 地图查看位置"
+  },
+  "reviews": {
+    "title": "游客评价与真实感知",
+    "words": ["手工艺品丰富", "夕阳很美", "适合买纪念品", "氛围极佳", "物美价廉"]
+  },
+  "map": {
+    "title": "地图与交通指南",
+    "transport": "交通建议",
+    "tuktuk": "Tuk-tuk (嘟嘟车)：万象最常见的交通工具，乘坐前请务必先与司机确认好价格。",
+    "loca": "Loca 网约车：老挝本土的打车软件，价格透明，安全便捷。",
+    "walk": "步行：从永珍早市步行至夜市仅需约 15 分钟，沿途可欣赏万象街景。"
+  },
+  "footer": {
+    "disclaimer": "本站为非营利性老挝文化与景点科普平台",
+    "mapLink": "Google Maps →"
+  }
+}

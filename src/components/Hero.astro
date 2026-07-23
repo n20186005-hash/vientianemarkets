@@ -1,0 +1,57 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import WeatherWidget from './WeatherWidget';
+import { MapPin } from 'lucide-react';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+  <div className="absolute inset-0 z-0">
+    <div className="absolute inset-0 bg-gradient-to-b from-mekong-blue/80 via-mekong-blue/50 to-zinc-900/90 z-10 mix-blend-multiply"></div>
+    <img 
+      src="/gallery/talat-sao-1.jpg" 
+      alt="Vientiane Markets Background" 
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+
+  <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+    <div className="flex flex-wrap justify-center gap-3 mb-8">
+      <span className="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold tracking-wide">
+        {t('hero.tags.morning')}
+      </span>
+      <span className="px-4 py-1.5 rounded-full bg-mekong-blue/40 backdrop-blur-md border border-mekong-blue/30 text-white text-sm font-semibold tracking-wide">
+        {t('hero.tags.night')}
+      </span>
+    </div>
+
+    <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tight mb-6 drop-shadow-lg">
+      {t('hero.title')}
+    </h1>
+    
+    <p className="text-lg sm:text-xl md:text-2xl text-zinc-200 max-w-3xl mb-12 font-medium">
+      {t('hero.subtitle')}
+    </p>
+
+    <div className="mb-12">
+      <WeatherWidget 
+        client:load 
+        tWeather={t('hero.weather')} 
+        tSunset={t('hero.sunset')} 
+        tBlueHour={t('hero.blueHour')} 
+      />
+    </div>
+
+    <a 
+      href="https://maps.app.goo.gl/2zP3kvc4hLKQ7q8V6" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+    >
+      <MapPin className="w-5 h-5" />
+      {t('hero.cta')}
+    </a>
+  </div>
+</section>

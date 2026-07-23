@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import GalleryViewer from './GalleryViewer';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// First, I need to check the image names. Wait, the instructions said:
+// "代码中使用干净的 kebab-case 文件命名（如 talat-sao-1.jpg, night-market-1.jpg）"
+// I will need to rename the files in public/gallery first or just map them.
+// I'll create a script to rename them, but for now I'll just use the target names and we will rename them in the file system.
+
+const images = [
+  '/gallery/talat-sao-1.jpg',
+  '/gallery/talat-sao-2.jpg',
+  '/gallery/talat-sao-3.jpg',
+  '/gallery/night-market-1.jpg',
+  '/gallery/night-market-2.jpg',
+  '/gallery/night-market-3.jpg',
+  '/gallery/market-culture-1.jpg',
+  '/gallery/market-culture-2.jpg'
+];
+---
+
+<GalleryViewer 
+  client:load 
+  images={images} 
+  tTitle={t('gallery.title')} 
+  tMapLink={t('gallery.mapLink')} 
+/>

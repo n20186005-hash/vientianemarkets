@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mekong-blue: #1e3a8a;
+  --color-sunset-orange: #f97316;
+  --font-sans: 'Inter', 'Noto Sans Lao', sans-serif;
+}

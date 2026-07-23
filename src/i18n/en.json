@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "title": "Vientiane Markets Guide",
+    "morning": "Talat Sao",
+    "night": "Night Market",
+    "compare": "Day vs Night",
+    "history": "History",
+    "map": "Map & Transport"
+  },
+  "hero": {
+    "title": "Talat Sao & Vientiane Night Market",
+    "subtitle": "The ultimate guide to Vientiane's two most iconic markets",
+    "weather": "Vientiane Weather",
+    "sunset": "Sunset",
+    "blueHour": "Blue Hour",
+    "cta": "View Talat Sao on Google Maps",
+    "tags": {
+      "morning": "Morning Market 07:00-17:00",
+      "night": "Night Market 18:00-22:00"
+    }
+  },
+  "markets": {
+    "title": "Double Market Core",
+    "talatSao": {
+      "name": "Talat Sao",
+      "type": "Shopping Mall & Traditional Market",
+      "rating": "3.9 (6,877 reviews)",
+      "desc1": "Traditional Lao Textiles (Sinh)",
+      "desc2": "Gold Jewelry & Antiques",
+      "desc3": "Modern Shopping Center"
+    },
+    "nightMarket": {
+      "name": "Vientiane Night Market",
+      "type": "Riverside Open-air Market",
+      "rating": "4.0 (3,004 reviews)",
+      "desc1": "Mekong River Sunset Views",
+      "desc2": "Printed Clothing & Handicrafts",
+      "desc3": "Night Walking Route",
+      "mapLink": "View Night Market Map"
+    },
+    "comparison": {
+      "time": "Hours",
+      "goods": "Main Goods",
+      "bargain": "Bargaining",
+      "transport": "Transport",
+      "tsTime": "07:00 – 17:00",
+      "tsGoods": "Textiles, Gold, Electronics, Souvenirs",
+      "tsBargain": "Acceptable (Except fixed price shops)",
+      "tsTransport": "Bus, Tuk-tuk, Loca",
+      "nmTime": "18:00 – 22:00",
+      "nmGoods": "Clothing, Souvenirs, Street Food",
+      "nmBargain": "Highly Expected",
+      "nmTransport": "Walking, Tuk-tuk, Loca"
+    }
+  },
+  "history": {
+    "title": "History & Cultural Background",
+    "evolution": {
+      "title": "Evolution of Talat Sao",
+      "desc": "Since the 1960s, Talat Sao has been the commercial heart of Laos, evolving from a traditional market to a modern mall while retaining its cultural charm."
+    },
+    "textile": {
+      "title": "Weaving Culture",
+      "desc": "Lao silk and cotton are not just commodities, but cultural symbols passed down through generations."
+    },
+    "etiquette": {
+      "title": "Shopping Etiquette",
+      "desc": "Lao people appreciate gentle communication. Bargaining should be done with a smile and politeness."
+    }
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "mapLink": "View location on Google Maps"
+  },
+  "reviews": {
+    "title": "Visitor Reviews",
+    "words": ["Rich handicrafts", "Beautiful sunset", "Great for souvenirs", "Nice atmosphere", "Cheap goods"]
+  },
+  "map": {
+    "title": "Interactive Map & Transportation",
+    "transport": "Transportation Guide",
+    "tuktuk": "Tuk-tuk: The most popular way to get around Vientiane. Always agree on the price before boarding.",
+    "loca": "Loca: A convenient and safe ride-hailing app in Laos.",
+    "walk": "Walking: Just a 15-minute walk from Talat Sao to the Night Market."
+  },
+  "footer": {
+    "disclaimer": "This site is a non-profit platform for Lao culture and tourism education.",
+    "mapLink": "Google Maps →"
+  }
+}
