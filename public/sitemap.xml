@@ -2,75 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://krubasrivichaimonument.com/th/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
+    <loc>https://vientianemarkets.com/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
+    <loc>https://vientianemarkets.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://krubasrivichaimonument.com/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="th" href="https://krubasrivichaimonument.com/th/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://krubasrivichaimonument.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://krubasrivichaimonument.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krubasrivichaimonument.com/th/"/>
+    <loc>https://vientianemarkets.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/th/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/en/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/zh/privacy-policy/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/th/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/en/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/zh/terms-of-service/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/th/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/en/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://krubasrivichaimonument.com/zh/cookie-settings/</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>

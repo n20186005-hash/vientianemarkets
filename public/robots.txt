@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://krubasrivichaimonument.com/sitemap.xml
+Sitemap: https://vientianemarkets.com/sitemap.xml
