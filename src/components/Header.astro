@@ -6,22 +6,22 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<header className="fixed w-full top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-200">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex items-center justify-between py-4">
-      <div className="flex-shrink-0 flex items-center">
-        <a href={lang === 'lo' ? '/' : `/${lang}/`} className="text-xl font-bold text-mekong-blue tracking-tight">
+<header class="fixed w-full top-0 z-40 bg-white/80 backdrop-blur-md border-b border-zinc-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between py-4">
+      <div class="flex-shrink-0 flex items-center">
+        <a href={lang === 'lo' ? '/' : `/${lang}/`} class="text-xl font-bold text-mekong-blue tracking-tight">
           {t('nav.title')}
         </a>
       </div>
       
-      <nav className="hidden md:flex space-x-8">
-        <a href="#market-core" className="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.compare')}</a>
-        <a href="#history" className="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.history')}</a>
-        <a href="#map" className="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.map')}</a>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#market-core" class="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.compare')}</a>
+        <a href="#history" class="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.history')}</a>
+        <a href="#map" class="text-zinc-600 hover:text-mekong-blue px-3 py-2 text-sm font-medium transition-colors">{t('nav.map')}</a>
       </nav>
 
-      <div className="flex items-center">
+      <div class="flex items-center">
         <LanguagePicker client:load currentLang={lang} />
       </div>
     </div>

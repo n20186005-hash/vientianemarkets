@@ -5,3 +5,15 @@
   --color-sunset-orange: #f97316;
   --font-sans: 'Inter', 'Noto Sans Lao', sans-serif;
 }
+
+/* Lao script needs extra vertical room so top/bottom diacritics aren't clipped */
+html[lang="lo"] body {
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+/* Give Lao paragraphs & list items a touch more breathing room */
+html[lang="lo"] p,
+html[lang="lo"] li {
+  margin-bottom: 0.5rem;
+}
