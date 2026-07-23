@@ -17,3 +17,8 @@ html[lang="lo"] p,
 html[lang="lo"] li {
   margin-bottom: 0.5rem;
 }
+
+/* Hide the native disclosure triangle on <summary> elements */
+summary::-webkit-details-marker {
+  display: none;
+}

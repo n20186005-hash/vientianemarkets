@@ -134,23 +134,23 @@
     "faq": {
       "1": {
         "q": "Which is more worth visiting, the morning or night market?",
-        "a": "They each shine: the morning market is best for textiles, gold and souvenirs and local street life; the night market wins on Mekong sunset, street food and night views. If short on time, browse near Talat Sao in the late afternoon, then walk to the night market for sunset — see both in a day."
+        "a": "The two offer completely different experiences, so we recommend visiting both. Talat Sao (Vientiane Morning Market) is best during the day, featuring traditional Lao hand-woven textiles (Lao Sinh), pure-gold jewellery, souvenirs and an indoor mall experience. The Vientiane Night Market is ideal for an evening or nighttime stroll along the Mekong riverfront, with open-air stalls, colourful printed clothing, Mekong sunsets and a lively night-time atmosphere."
       },
       "2": {
         "q": "How do I bargain rationally in Vientiane markets?",
-        "a": "Compare prices at a few stalls first, then open with a smile and politely offer around 70–80% of the asking price. Fixed-price shops (mall counters) usually don't negotiate, while open-air stalls are flexible."
+        "a": "Lao culture values gentleness and politeness (the common greeting is \"Sabaidee\"). Individual stalls at the open-air night and morning markets usually have 10%–30% room for negotiation — keep smiling while you talk. Branded counters, gold shops and supermarkets inside Talat Sao have fixed prices, so there's no need to bargain."
       },
       "3": {
         "q": "How do I get between the two markets — walk or ride?",
-        "a": "Talat Sao and the Mekong Riverfront night market are about 1.5 km apart; walking takes 15–20 minutes with nice city views, or a tuk-tuk / Loca ride gets you there in a few minutes."
+        "a": "Talat Sao and the Night Market are only about 1.2 km apart in a straight line. Walking is recommended (about 15 minutes), letting you enjoy the city-centre streetscapes along the way. If you're carrying heavy items or it's hot, use the Loca ride-hailing app or take a Tuk-tuk (confirm the fare with the driver before getting in)."
       },
       "4": {
         "q": "When is the best time for photos?",
-        "a": "The night market's best photo window is the Blue Hour around 18:00, when the sky turns from orange to indigo and the river reflects beautifully. The morning market is best shot between 9–11 am when crowds are moderate and light is soft."
+        "a": "Head to the Mekong riverfront near the Night Market and Chao Anouvong Park between 17:30–18:30 (sunset to blue hour) for stunning shots of the glowing sky against the night-market lights. For the Morning Market, go between 09:00–11:00, when indoor and street lighting is ample and good for capturing artisans and daily-commercial life."
       },
       "5": {
         "q": "What currencies are accepted, and is it safe?",
-        "a": "Both markets primarily take Lao Kip (LAK) in cash; some larger shops accept Thai Baht (THB) and a few support mobile payments such as WeChat / Alipay. Vientiane is generally safe, but keep valuables secure, avoid displaying large amounts of cash in crowds, and consider going out at night with company."
+        "a": "Lao kip (LAK) cash is preferred; most stalls also accept Thai baht (THB), and some larger vendors support WeChat Pay / Alipay. Vientiane is generally safe, but in the crowded Night Market keep your bag and phone and other valuables close."
       }
     }
   },
@@ -214,7 +214,15 @@
     "transport": "Transportation Guide",
     "tuktuk": "Tuk-tuk: The most popular way to get around Vientiane. Always agree on the price before boarding.",
     "loca": "Loca: A convenient and safe ride-hailing app in Laos.",
-    "walk": "Walking: Just a 15-minute walk from Talat Sao to the Night Market."
+    "walk": "Walking: Just a 15-minute walk from Talat Sao to the Night Market.",
+    "airport": {
+      "title": "From Wattay Airport to the Markets",
+      "desc": "Wattay International Airport (VTE) is about 3–4 km from the city centre and ~6 km from Talat Sao — roughly a 15–25 min drive. Common ways to get there:",
+      "taxi": "Airport taxi / private car: official taxi desks outside the terminal; a direct trip to the Morning or Night Market costs about 80,000–120,000 LAK (~US$4–6). Agree on the price first.",
+      "loca": "Loca ride-hailing: book a Loca ride at the airport — transparent pricing, can link a foreign card; the best value option.",
+      "bus": "Airport bus / shuttle: cheapest, but limited frequency and requires transfers; best for light backpackers without much luggage.",
+      "note": "Tip: there is no metro or rail at the airport. After arrival, change money or withdraw LAK so you can pay fares and shop at the markets."
+    }
   },
   "footer": {
     "aboutTitle": "Vientiane Markets Complete Guide",

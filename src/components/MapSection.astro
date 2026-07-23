@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import { Bus, Car, Footprints } from 'lucide-react';
+import { Bus, Car, Footprints, Plane } from 'lucide-react';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -43,6 +43,33 @@ const t = useTranslations(lang);
             <p class="text-zinc-700 leading-relaxed">{t('map.walk')}</p>
           </div>
         </div>
+
+        <div class="mt-4 p-6 bg-white rounded-2xl border border-zinc-100 shadow-sm">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mekong-blue/10 rounded-full flex items-center justify-center shadow-sm shrink-0">
+              <Plane className="w-6 h-6 text-mekong-blue" />
+            </div>
+            <div class="flex-1">
+              <h4 class="text-lg font-bold text-zinc-900 mb-2">{t('map.airport.title')}</h4>
+              <p class="text-zinc-700 leading-relaxed mb-4">{t('map.airport.desc')}</p>
+              <ul class="space-y-3">
+                <li class="flex gap-2 items-start">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sunset-orange shrink-0"></span>
+                  <p class="text-sm text-zinc-700 leading-relaxed">{t('map.airport.taxi')}</p>
+                </li>
+                <li class="flex gap-2 items-start">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sunset-orange shrink-0"></span>
+                  <p class="text-sm text-zinc-700 leading-relaxed">{t('map.airport.loca')}</p>
+                </li>
+                <li class="flex gap-2 items-start">
+                  <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sunset-orange shrink-0"></span>
+                  <p class="text-sm text-zinc-700 leading-relaxed">{t('map.airport.bus')}</p>
+                </li>
+              </ul>
+              <p class="mt-4 text-sm text-zinc-500 leading-relaxed border-t border-zinc-100 pt-3">{t('map.airport.note')}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="lg:col-span-2">
@@ -55,9 +82,13 @@ const t = useTranslations(lang);
             <span class="w-4 h-4 rounded-full bg-sunset-orange border-2 border-white shadow"></span>
             {t('map.morning')} · Talat Sao
           </span>
-          <span class="inline-flex items-center gap-2">
+            <span class="inline-flex items-center gap-2">
             <span class="w-4 h-4 rounded-full bg-mekong-blue border-2 border-white shadow"></span>
             {t('map.night')} · Night Market
+          </span>
+          <span class="inline-flex items-center gap-2">
+            <span class="w-4 h-4 rounded-full bg-zinc-900 border-2 border-white shadow"></span>
+            {t('map.airport.title')}
           </span>
         </div>
 
@@ -90,7 +121,10 @@ const t = useTranslations(lang);
             var night = L.marker([17.9622, 102.6074], { icon: pin('🌙', '#1e3a8a') }).addTo(map);
             night.bindPopup('<strong>Vientiane Night Market (晚市)</strong><br>Mekong Riverfront, Vientiane');
 
-            var bounds = L.latLngBounds([[17.9656, 102.6143], [17.9622, 102.6074]]);
+            var airport = L.marker([17.9833, 102.5617], { icon: pin('✈️', '#18181b') }).addTo(map);
+            airport.bindPopup('<strong>Wattay International Airport (VTE)</strong><br>瓦岱国际机场');
+
+            var bounds = L.latLngBounds([[17.9833, 102.5617], [17.9622, 102.6074]]);
             map.fitBounds(bounds, { padding: [70, 70] });
             setTimeout(function () { map.invalidateSize(); }, 200);
           })();
