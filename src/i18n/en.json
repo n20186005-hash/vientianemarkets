@@ -5,6 +5,8 @@
     "night": "Night Market",
     "compare": "Day vs Night",
     "history": "History",
+    "itinerary": "Itinerary",
+    "culture": "Tips & FAQ",
     "map": "Map & Transport"
   },
   "hero": {
@@ -54,23 +56,99 @@
     }
   },
   "history": {
-    "title": "History & Cultural Background",
+    "title": "History, Legends & Cultural Background",
     "evolution": {
-      "title": "Evolution of Talat Sao",
-      "desc": "Since the 1960s, Talat Sao has been the commercial heart of Laos, evolving from a traditional market to a modern mall while retaining its cultural charm."
+      "title": "The Evolution of Talat Sao: Vientiane's Commercial Origin",
+      "desc": "Since the 1960s, Talat Sao has been the trade hub of the Mekong basin. From its beginnings as a wooden-shed open market, it grew into Laos' first modern shopping complex with elevators and air-conditioned malls, and remains Vientiane's most iconic retail landmark."
     },
     "textile": {
-      "title": "Weaving Culture",
-      "desc": "Lao silk and cotton are not just commodities, but cultural symbols passed down through generations."
+      "title": "The Hidden Code of the Lao Sinh",
+      "desc": "Patterns on hand-woven cloth are never random: the Naga serpent means protection, the elephant deity stands for strength, and the lotus for purity. A sinh is made of the Tin Sinh (decorated hem) and the Hua Sinh (main body); weaving styles and motifs differ from Luang Prabang to Champasak, silently signalling the wearer's region and identity."
     },
     "etiquette": {
-      "title": "Shopping Etiquette",
-      "desc": "Lao people appreciate gentle communication. Bargaining should be done with a smile and politeness."
+      "title": "Gold, Baci & Wedding Culture",
+      "desc": "Talat Sao is Vientiane's largest gold-trading centre. In the traditional Lao Baci blessing ceremony and wedding customs, pure-gold jewellery is more than wealth — it is a vessel of prayer and protection. To gift gold is to gift a blessing."
+    },
+    "naga": {
+      "title": "The Mekong Naga Water-Spirit Legend",
+      "desc": "The night market sits beside Chao Anouvong Park, where a bronze statue of the king faces the far bank of the Mekong — a symbol of Lao national heroism and independence. Locals have worshipped the river's Naga spirit for generations; the serpent woodcarvings, silver jewellery and charms sold at the market all carry wishes for calm waters and good harvests."
+    },
+    "sunset": {
+      "title": "Mekong Sunset & the Blue Hour",
+      "desc": "As the sun sets, the river turns gold then indigo during the fleeting 'Blue Hour' — one of Vientiane's top ten sights. Many travellers arrive at the riverfront between 17:30 and 18:30 just to capture this blend of nature and culture."
     }
   },
   "gallery": {
     "title": "Photo Gallery",
     "mapLink": "View location on Google Maps"
+  },
+  "itinerary": {
+    "title": "Recommended One-Day Itinerary",
+    "subtitle": "From a morning Lao iced coffee at the market to the Blue Hour on the Mekong — one timeline through Vientiane's most authentic day and night.",
+    "steps": {
+      "1": {
+        "time": "08:00 – 10:30",
+        "title": "Morning Market Roam",
+        "desc": "At Talat Sao, enjoy a Lao iced coffee (Café Lao), browse traditional textiles and gold jewellery, and pick up a hand-woven sinh and souvenirs."
+      },
+      "2": {
+        "time": "10:30 – 16:30",
+        "title": "Lane Xang Avenue Stroll",
+        "desc": "Walk or take a tuk-tuk along Lane Xang Avenue to visit Patuxai (the Victory Gate) and Wat Ho Phra Keo, feeling the historic fabric of Vientiane."
+      },
+      "3": {
+        "time": "17:30 – 18:30",
+        "title": "Sunset at Chao Anouvong Park",
+        "desc": "Head to Chao Anouvong Park and watch the Mekong sunset with the Thai side across the river, catching the gorgeous Blue Hour sky."
+      },
+      "4": {
+        "time": "18:30 – 21:00",
+        "title": "Night Market Walk & Dinner",
+        "desc": "Stroll the Vientiane Night Market, savour grilled chicken (Ping Kai) and papaya salad (Tam Mak Hoong), and shop for printed clothing and handmade charms."
+      },
+      "5": {
+        "time": "After 21:00",
+        "title": "Riverside Walk Home",
+        "desc": "Digest with a riverside walk, or hop in a Loca ride back to your stay — bringing a fulfilling day to a close."
+      }
+    }
+  },
+  "culture": {
+    "title": "Lao Shopping Etiquette & Quick Reference",
+    "etiquette": "Shopping Etiquette & Bargaining",
+    "etiquetteDesc": "Lao people value gentle, soft-spoken communication. In the market, a smile is the best passport — friendly bargaining is part of the local experience.",
+    "tip1": "Say Sabaidee first, then talk price — it eases the mood.",
+    "tip2": "Check whether a shop is fixed-price before big haggling, to avoid awkwardness.",
+    "tip3": "Say Khop Chai after a deal; both sides leave happy.",
+    "payment": "Payment Tips",
+    "paymentDesc": "Most stalls prefer Lao Kip (LAK) cash; some larger shops accept Thai Baht (THB), and a few support WeChat / Alipay. Carry some cash and small change.",
+    "phrasesTitle": "Lao Phrase Cheat-Sheet",
+    "phrasesHint": "Screenshot and point to read aloud to vendors — communication gets much easier.",
+    "phrases": {
+      "1": { "zh": "Hello", "lo": "ສະບາຍດີ (Sabaidee)", "note": "Greet first" },
+      "2": { "zh": "Thank you", "lo": "ຂອບໃຈ (Khop Chai)", "note": "After a deal" },
+      "3": { "zh": "How much?", "lo": "ເທົ່າໃດ (Thao Dai?)", "note": "Point at item" },
+      "4": { "zh": "Can it be cheaper?", "lo": "ຫຼຸດໄດ້ບໍ (Lort Dai Bo?)", "note": "Haggle gently" }
+    },
+    "faqTitle": "Frequently Asked Questions",
+    "faq": {
+      "1": {
+        "q": "Which is more worth visiting, the morning or night market?",
+        "a": "They each shine: the morning market is best for textiles, gold and souvenirs and local street life; the night market wins on Mekong sunset, street food and night views. If short on time, browse near Talat Sao in the late afternoon, then walk to the night market for sunset — see both in a day."
+      },
+      "2": {
+        "q": "How do I bargain rationally in Vientiane markets?",
+        "a": "Compare prices at a few stalls first, then open with a smile and politely offer around 70–80% of the asking price. Fixed-price shops (mall counters) usually don't negotiate, while open-air stalls are flexible."
+      },
+      "3": {
+        "q": "How do I get between the two markets — walk or ride?",
+        "a": "Talat Sao and the Mekong Riverfront night market are about 1.5 km apart; walking takes 15–20 minutes with nice city views, or a tuk-tuk / Loca ride gets you there in a few minutes."
+      },
+      "4": {
+        "q": "When is the best time for photos?",
+        "a": "The night market's best photo window is the Blue Hour around 18:00, when the sky turns from orange to indigo and the river reflects beautifully. The morning market is best shot between 9–11 am when crowds are moderate and light is soft."
+      }
+    }
   },
   "reviews": {
     "title": "Visitor Reviews",
@@ -78,13 +156,30 @@
   },
   "map": {
     "title": "Interactive Map & Transportation",
+    "morning": "Morning Market",
+    "night": "Night Market",
     "transport": "Transportation Guide",
     "tuktuk": "Tuk-tuk: The most popular way to get around Vientiane. Always agree on the price before boarding.",
     "loca": "Loca: A convenient and safe ride-hailing app in Laos.",
     "walk": "Walking: Just a 15-minute walk from Talat Sao to the Night Market."
   },
   "footer": {
-    "disclaimer": "This site is a non-profit platform for Lao culture and tourism education.",
-    "mapLink": "Google Maps →"
+    "aboutTitle": "Vientiane Markets Complete Guide",
+    "aboutText1": "This website is an independent, non-profit visitor information project. We are not affiliated with any government agency or official organization.",
+    "aboutText2": "Data Source: The attraction information cited on this site is verified against public materials from the Lao Tourism Board and the official Lao government portal, and contains no commercial endorsements.",
+    "resTitle": "Official & Reference Links",
+    "resTourism": "Lao Tourism Board",
+    "resMict": "Ministry of Information, Culture and Tourism",
+    "resMorningMap": "Google Maps · Talat Sao (Morning Market)",
+    "resNightMap": "Google Maps · Vientiane Night Market",
+    "legalTitle": "Privacy & Terms",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookie": "Cookie Settings",
+    "copyright": "© 2026 Talat Sao & Vientiane Night Market Guide — An independent non-profit attraction info project. All rights reserved.",
+    "privacyTitle": "Privacy Policy",
+    "privacyBody": "This website is a non-profit visitor information project and does not actively collect your personal identifiable information. We only obtain necessary details when you voluntarily submit a form, and we never sell or resell them to third parties. This site may use cookies to remember your language preference. If you visit third-party websites via our outbound links (such as the Lao Tourism Board or Google Maps), their data practices are governed by their own privacy policies.",
+    "termsTitle": "Terms of Service",
+    "termsBody": "All information provided on this site is compiled from public sources for reference only and does not constitute any commercial, legal, or travel advice. Opening hours, prices, and transport conditions may change at any time; please verify with official channels before your visit. This site is not affiliated with or acting on behalf of any government agency or business, and is not liable for any loss arising from the use of its information."
   }
 }

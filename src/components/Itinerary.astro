@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Timeline steps — copy is pulled from i18n `itinerary.steps` (1..5)
+const steps = [1, 2, 3, 4, 5].map((n) => ({
+  time: t(`itinerary.steps.${n}.time`),
+  title: t(`itinerary.steps.${n}.title`),
+  desc: t(`itinerary.steps.${n}.desc`),
+}));
+---
+
+<section id="itinerary" class="py-24 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">{t('itinerary.title')}</h2>
+      <p class="text-lg text-zinc-500 max-w-2xl mx-auto">{t('itinerary.subtitle')}</p>
+      <div class="w-24 h-1 bg-sunset-orange mx-auto rounded-full mt-4"></div>
+    </div>
+
+    <ol class="relative border-l-2 border-zinc-200 ml-3 md:ml-6 space-y-10">
+      {steps.map((s, i) => (
+        <li class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[13px] md:-left-[17px] top-1 w-6 h-6 md:w-8 md:h-8 rounded-full bg-mekong-blue text-white flex items-center justify-center text-xs md:text-sm font-bold shadow ring-4 ring-white">
+            {i + 1}
+          </span>
+          <div class="bg-zinc-50 rounded-2xl p-6 border border-zinc-100 hover:shadow-md transition-shadow">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+              <span class="inline-flex items-center rounded-full bg-mekong-blue/10 text-mekong-blue font-semibold px-3 py-1 text-sm">
+                {s.time}
+              </span>
+              <h3 class="text-lg font-bold text-zinc-900">{s.title}</h3>
+            </div>
+            <p class="text-zinc-600 leading-relaxed">{s.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

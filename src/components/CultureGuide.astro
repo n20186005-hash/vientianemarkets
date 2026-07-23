@@ -1,0 +1,95 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const phrases = [1, 2, 3, 4].map((n) => ({
+  zh: t(`culture.phrases.${n}.zh`),
+  lo: t(`culture.phrases.${n}.lo`),
+  note: t(`culture.phrases.${n}.note`),
+}));
+
+const faqs = [1, 2, 3, 4].map((n) => ({
+  q: t(`culture.faq.${n}.q`),
+  a: t(`culture.faq.${n}.a`),
+}));
+---
+
+<section id="culture" class="py-24 bg-zinc-50 border-t border-zinc-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">{t('culture.title')}</h2>
+      <div class="w-24 h-1 bg-mekong-blue mx-auto rounded-full"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12">
+      {/* Left: etiquette + payment */}
+      <div class="space-y-10">
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100">
+          <h3 class="text-xl font-bold text-zinc-900 mb-4">{t('culture.etiquette')}</h3>
+          <p class="text-zinc-600 leading-relaxed mb-4">{t('culture.etiquetteDesc')}</p>
+          <ul class="space-y-3 text-zinc-600">
+            <li class="flex gap-3"><span class="text-mekong-blue font-bold">✓</span><span>{t('culture.tip1')}</span></li>
+            <li class="flex gap-3"><span class="text-mekong-blue font-bold">✓</span><span>{t('culture.tip2')}</span></li>
+            <li class="flex gap-3"><span class="text-mekong-blue font-bold">✓</span><span>{t('culture.tip3')}</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100">
+          <h3 class="text-xl font-bold text-zinc-900 mb-4">{t('culture.payment')}</h3>
+          <p class="text-zinc-600 leading-relaxed">{t('culture.paymentDesc')}</p>
+        </div>
+      </div>
+
+      {/* Right: Lao phrase cheat-sheet */}
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-zinc-100">
+        <h3 class="text-xl font-bold text-zinc-900 mb-2">{t('culture.phrasesTitle')}</h3>
+        <p class="text-sm text-zinc-500 mb-6">{t('culture.phrasesHint')}</p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {phrases.map((p) => (
+            <div class="rounded-xl border border-zinc-100 bg-zinc-50 p-4">
+              <div class="text-sm text-zinc-500 mb-1">{p.zh}</div>
+              <div class="text-2xl font-semibold text-mekong-blue font-sans">{p.lo}</div>
+              {p.note && <div class="text-xs text-zinc-400 mt-1">{p.note}</div>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* FAQ Accordion */}
+    <div class="mt-16 max-w-3xl mx-auto">
+      <h3 class="text-2xl font-bold text-zinc-900 mb-8 text-center">{t('culture.faqTitle')}</h3>
+      <div class="space-y-4" x-data="{ open: null }">
+        {faqs.map((f, i) => (
+          <div class="bg-white border border-zinc-100 rounded-2xl overflow-hidden shadow-sm">
+            <button
+              type="button"
+              class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+              onclick={`if(open===${i}){open=null}else{open=${i}}`}
+              aria-expanded={i === 0 ? 'true' : 'false'}
+            >
+              <span class="font-semibold text-zinc-900">{f.q}</span>
+              <svg
+                class={`w-5 h-5 shrink-0 text-mekong-blue transition-transform duration-300 ${i === 0 ? 'rotate-180' : ''}`}
+                x-bind:class={i === 0 ? '' : `open===${i} ? 'rotate-180' : ''`}
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              class="px-6 pb-5 text-zinc-600 leading-relaxed"
+              x-show={`open===${i}`}
+              x-bind:class={i === 0 ? '' : ''}
+              style={i === 0 ? '' : 'display:none'}
+            >
+              {f.a}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
