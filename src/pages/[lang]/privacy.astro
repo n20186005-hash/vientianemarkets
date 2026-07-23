@@ -10,13 +10,33 @@ export function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const p = t('legal.privacySections');
 ---
 
 <Layout title={t('footer.privacyTitle') as string} description={t('footer.privacyTitle') as string}>
   <Header />
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-3xl font-bold text-zinc-900 mb-6">{t('footer.privacyTitle')}</h1>
-    <p class="text-zinc-600 leading-relaxed">{t('footer.privacyBody')}</p>
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold text-zinc-900 mb-2">{t('footer.privacyTitle')}</h1>
+    <p class="text-sm text-zinc-500 mb-10">{t('legal.privacyUpdated')}</p>
+
+    <div class="space-y-8">
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{p.collectedTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{p.collectedBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{p.usageTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{p.usageBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{p.thirdTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{p.thirdBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{p.rightsTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{p.rightsBody}</p>
+      </section>
+    </div>
   </main>
   <Footer />
 </Layout>

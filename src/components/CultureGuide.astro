@@ -10,11 +10,23 @@ const phrases = [1, 2, 3, 4].map((n) => ({
   note: t(`culture.phrases.${n}.note`),
 }));
 
-const faqs = [1, 2, 3, 4].map((n) => ({
+const faqs = [1, 2, 3, 4, 5].map((n) => ({
   q: t(`culture.faq.${n}.q`),
   a: t(`culture.faq.${n}.a`),
 }));
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 ---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)}></script>
 
 <section id="culture" class="py-24 bg-zinc-50 border-t border-zinc-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

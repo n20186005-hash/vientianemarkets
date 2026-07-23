@@ -1,10 +1,14 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import { Star, MessageCircle } from 'lucide-react';
+import { Star, MapPin } from 'lucide-react';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const words = t('reviews.words') as string[];
+
+const cards = [
+  { key: 'morning', market: 'talatSao' },
+  { key: 'night', market: 'nightMarket' },
+];
 ---
 
 <section class="py-24 bg-zinc-900 text-white border-y border-zinc-800">
@@ -14,45 +18,37 @@ const words = t('reviews.words') as string[];
       <div class="w-24 h-1 bg-mekong-blue mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <div class="flex items-center gap-4 mb-6">
-          <div class="flex text-amber-400">
-            <Star className="w-8 h-8 fill-current" />
-            <Star className="w-8 h-8 fill-current" />
-            <Star className="w-8 h-8 fill-current" />
-            <Star className="w-8 h-8 fill-current" />
-            <Star className="w-8 h-8 fill-current opacity-50" />
+    <div class="grid md:grid-cols-2 gap-6">
+      {cards.map(({ key, market }) => (
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-8 hover:border-mekong-blue/40 transition-colors">
+          <div class="flex items-center justify-between mb-5">
+            <h3 class="text-xl font-bold">{t(`reviews.${key}.name`)}</h3>
           </div>
-          <span class="text-3xl font-bold">4.0</span>
-        </div>
-        <p class="text-zinc-400 mb-8 text-lg">
-          Based on 9,800+ reviews from Google Maps for both Talat Sao and Vientiane Night Market.
-        </p>
-        <a 
-          href="https://maps.app.goo.gl/2zP3kvc4hLKQ7q8V6" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="inline-flex items-center px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-xl transition-colors border border-white/10"
-        >
-          <MessageCircle className="w-5 h-5 mr-2" />
-          Read Google Reviews
-        </a>
-      </div>
 
-      <div class="flex flex-wrap gap-4">
-        {words && words.length > 0 && words.map((word, idx) => (
-          <span 
-            class={`px-6 py-3 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm border border-white/10 ${
-              idx % 3 === 0 ? 'bg-mekong-blue/80 text-white text-lg' : 
-              idx % 3 === 1 ? 'bg-amber-500/80 text-white text-base' : 
-              'bg-white/10 text-zinc-200 text-sm'
-            }`}
+          <div class="flex items-center gap-3 mb-6">
+            <Star className="w-6 h-6 fill-current text-amber-400" />
+            <span class="text-2xl font-bold">{t(`markets.${market}.rating`)}</span>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mb-8">
+            {t(`reviews.${key}.tags`).map((tag: string) => (
+              <span class="px-3 py-1.5 rounded-full text-xs font-medium bg-mekong-blue/15 text-mekong-blue border border-mekong-blue/30">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <a
+            href={t(`reviews.${key}.mapUrl`) as string}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-5 py-3 bg-mekong-blue hover:bg-mekong-blue/90 text-white font-medium rounded-xl transition-colors"
           >
-            "{word}"
-          </span>
-        ))}
-      </div>
+            <MapPin className="w-4 h-4 mr-2" />
+            {t(`reviews.${key}.mapLabel`)}
+          </a>
+        </div>
+      ))}
     </div>
   </div>
 </section>

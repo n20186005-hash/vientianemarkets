@@ -10,13 +10,34 @@ export function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const s = t('legal.termsSections');
 ---
 
 <Layout title={t('footer.termsTitle') as string} description={t('footer.termsTitle') as string}>
   <Header />
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-3xl font-bold text-zinc-900 mb-6">{t('footer.termsTitle')}</h1>
-    <p class="text-zinc-600 leading-relaxed">{t('footer.termsBody')}</p>
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold text-zinc-900 mb-2">{t('footer.termsTitle')}</h1>
+    <p class="text-sm text-zinc-500 mb-6">{t('legal.termsUpdated')}</p>
+    <p class="text-zinc-600 leading-relaxed mb-10">{t('legal.termsAgree')}</p>
+
+    <div class="space-y-8">
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.contentTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{s.contentBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.accuracyTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{s.accuracyBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.ipTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{s.ipBody}</p>
+      </section>
+      <section>
+        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.liabilityTitle}</h2>
+        <p class="text-zinc-600 leading-relaxed">{s.liabilityBody}</p>
+      </section>
+    </div>
   </main>
   <Footer />
 </Layout>

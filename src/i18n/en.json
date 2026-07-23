@@ -147,12 +147,65 @@
       "4": {
         "q": "When is the best time for photos?",
         "a": "The night market's best photo window is the Blue Hour around 18:00, when the sky turns from orange to indigo and the river reflects beautifully. The morning market is best shot between 9–11 am when crowds are moderate and light is soft."
+      },
+      "5": {
+        "q": "What currencies are accepted, and is it safe?",
+        "a": "Both markets primarily take Lao Kip (LAK) in cash; some larger shops accept Thai Baht (THB) and a few support mobile payments such as WeChat / Alipay. Vientiane is generally safe, but keep valuables secure, avoid displaying large amounts of cash in crowds, and consider going out at night with company."
       }
     }
   },
   "reviews": {
     "title": "Visitor Reviews",
-    "words": ["Rich handicrafts", "Beautiful sunset", "Great for souvenirs", "Nice atmosphere", "Cheap goods"]
+    "morning": {
+      "name": "Talat Sao (Morning Market)",
+      "tags": ["Rich handicrafts", "Great for souvenirs", "Traditional textiles"],
+      "mapLabel": "View Morning Market Reviews",
+      "mapUrl": "https://maps.app.goo.gl/ccwSX7H45Zj4bTTK8"
+    },
+    "night": {
+      "name": "Vientiane Night Market",
+      "tags": ["Beautiful sunset", "Great atmosphere", "Cheap goods"],
+      "mapLabel": "View Night Market Reviews",
+      "mapUrl": "https://maps.app.goo.gl/4opj9mpJvT2TJudD7"
+    }
+  },
+  "legal": {
+    "privacyUpdated": "Last updated: July 2026",
+    "privacySections": {
+      "collectedTitle": "Information We Collect",
+      "collectedBody": "We collect only the minimum data necessary to provide our service. This may include: browsing data (IP address, browser type, pages visited), Cookies and similar technologies, and any information you voluntarily provide through contact forms or email.",
+      "usageTitle": "How We Use Your Information",
+      "usageBody": "We use the collected information to: improve website content and user experience, analyze traffic and usage patterns, respond to your requests, and comply with our legal obligations.",
+      "thirdTitle": "Third-Party Services",
+      "thirdBody": "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis), and Unsplash (for images). These services have their own privacy policies.",
+      "rightsTitle": "Your Rights",
+      "rightsBody": "Under the General Data Protection Regulation (GDPR) and related laws, you have the right to: access your personal data, request correction or deletion, object to processing, and lodge a complaint with a supervisory authority."
+    },
+    "termsUpdated": "Last updated: July 2026",
+    "termsAgree": "By accessing and using www.vientianemarkets.com, you agree to be bound by these Terms of Service.",
+    "termsSections": {
+      "contentTitle": "Use of Content",
+      "contentBody": "All content on this website is provided for informational purposes only. We are an independent third-party travel information website and are not affiliated with any attraction, government agency, or commercial operator.",
+      "accuracyTitle": "Accuracy of Information",
+      "accuracyBody": "We strive to provide accurate and up-to-date information but cannot guarantee its completeness or accuracy. Itineraries, conditions, and services are subject to change without notice. Please always verify important details through official channels before traveling.",
+      "ipTitle": "Intellectual Property",
+      "ipBody": "The design and original content of this website are protected by copyright. Images are from Unsplash and used under their license. Use of Google Maps data complies with Google's Terms of Service.",
+      "liabilityTitle": "Limitation of Liability",
+      "liabilityBody": "This website is provided \"as is\" without any warranties. We are not liable for any loss arising from the use of information on this site, including but not limited to travel decisions based on its content."
+    },
+    "cookieUpdated": "Last updated: July 2026",
+    "cookieDesc": "We use Cookies to improve your browsing experience. You can manage your preferences below.",
+    "cookieSave": "Save Preferences",
+    "cookieReject": "Reject Non-Essential Cookies",
+    "cookieNecessary": "Necessary Cookies",
+    "cookieNecessaryDesc": "These Cookies are essential for the website to function and cannot be disabled.",
+    "cookieAnalytics": "Analytics Cookies (Google Analytics)",
+    "cookieAnalyticsDesc": "Collect anonymous information about how visitors use our website, helping us understand interactions and improve the site.",
+    "cookiePref": "Preference Cookies (User Preferences)",
+    "cookiePrefDesc": "Remember your custom settings, such as language and theme preferences.",
+    "cookieMarketing": "Marketing Cookies (Personalized Ads)",
+    "cookieMarketingDesc": "Used to display relevant ads and measure the effectiveness of advertising campaigns.",
+    "cookieAlwaysActive": "Always Active"
   },
   "map": {
     "title": "Interactive Map & Transportation",

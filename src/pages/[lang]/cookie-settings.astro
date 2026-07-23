@@ -1,0 +1,111 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getLangFromUrl, useTranslations, languages } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return Object.keys(languages).map((lang) => ({ params: { lang } }));
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t('footer.cookie') as string} description={t('footer.cookie') as string}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-16">
+    <h1 class="text-3xl font-bold text-zinc-900 mb-2">{t('footer.cookie')}</h1>
+    <p class="text-sm text-zinc-500 mb-6">{t('legal.cookieUpdated')}</p>
+    <p class="text-zinc-600 leading-relaxed mb-10">{t('legal.cookieDesc')}</p>
+
+    <div
+      x-data="{
+        necessary: true,
+        analytics: true,
+        pref: true,
+        marketing: false,
+        saved: false,
+        init() {
+          try {
+            const s = JSON.parse(localStorage.getItem('cookie-consent') || 'null');
+            if (s) { this.analytics = s.analytics; this.pref = s.pref; this.marketing = s.marketing; }
+          } catch (e) {}
+        },
+        save() {
+          localStorage.setItem('cookie-consent', JSON.stringify({ analytics: this.analytics, pref: this.pref, marketing: this.marketing }));
+          this.saved = true;
+          setTimeout(() => this.saved = false, 2500);
+        },
+        rejectAll() {
+          this.analytics = false; this.pref = false; this.marketing = false; this.save();
+        }
+      }"
+      class="space-y-4"
+    >
+      <!-- Necessary -->
+      <div class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
+        <div class="pr-4">
+          <p class="font-semibold text-zinc-900">{t('legal.cookieNecessary')}</p>
+          <p class="text-sm text-zinc-500 mt-1">{t('legal.cookieNecessaryDesc')}</p>
+        </div>
+        <span class="shrink-0 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-zinc-200 text-zinc-600">
+          {t('legal.cookieAlwaysActive')}
+        </span>
+      </div>
+
+      <!-- Analytics -->
+      <div class="flex items-center justify-between rounded-2xl border border-zinc-200 p-5">
+        <div class="pr-4">
+          <p class="font-semibold text-zinc-900">{t('legal.cookieAnalytics')}</p>
+          <p class="text-sm text-zinc-500 mt-1">{t('legal.cookieAnalyticsDesc')}</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="checkbox" x-model="analytics" class="sr-only peer" />
+          <div class="w-11 h-6 bg-zinc-300 peer-checked:bg-mekong-blue rounded-full peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+        </label>
+      </div>
+
+      <!-- Preference -->
+      <div class="flex items-center justify-between rounded-2xl border border-zinc-200 p-5">
+        <div class="pr-4">
+          <p class="font-semibold text-zinc-900">{t('legal.cookiePref')}</p>
+          <p class="text-sm text-zinc-500 mt-1">{t('legal.cookiePrefDesc')}</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="checkbox" x-model="pref" class="sr-only peer" />
+          <div class="w-11 h-6 bg-zinc-300 peer-checked:bg-mekong-blue rounded-full peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+        </label>
+      </div>
+
+      <!-- Marketing -->
+      <div class="flex items-center justify-between rounded-2xl border border-zinc-200 p-5">
+        <div class="pr-4">
+          <p class="font-semibold text-zinc-900">{t('legal.cookieMarketing')}</p>
+          <p class="text-sm text-zinc-500 mt-1">{t('legal.cookieMarketingDesc')}</p>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer shrink-0">
+          <input type="checkbox" x-model="marketing" class="sr-only peer" />
+          <div class="w-11 h-6 bg-zinc-300 peer-checked:bg-mekong-blue rounded-full peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+        </label>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-4 pt-4">
+        <button
+          @click="save()"
+          class="px-6 py-3 bg-mekong-blue hover:bg-mekong-blue/90 text-white font-medium rounded-xl transition-colors"
+        >
+          {t('legal.cookieSave')}
+        </button>
+        <button
+          @click="rejectAll()"
+          class="px-6 py-3 border border-zinc-300 text-zinc-700 font-medium rounded-xl hover:bg-zinc-100 transition-colors"
+        >
+          {t('legal.cookieReject')}
+        </button>
+        <span x-show="saved" x-cloak class="text-sm text-green-600 font-medium">{t('legal.cookieSave')} ✓</span>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
