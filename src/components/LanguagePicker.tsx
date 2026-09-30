@@ -10,7 +10,7 @@ export default function LanguagePicker({ lang = 'lo', path = '/' }: Props) {
   const [open, setOpen] = useState(false);
 
   const getPath = (targetLang: string) => {
-    const base = path.replace(/^\/(en|zh|lo)(\/|$)/, '/');
+    const base = path.replace(/^\/(en|zh|lo|th)(\/|$)/, '/');
     return targetLang === 'lo' ? base : `/${targetLang}${base}`;
   };
 

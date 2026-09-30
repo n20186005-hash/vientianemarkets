@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import MarketCore from '../components/MarketCore.astro';
+import ExploreCards from '../components/ExploreCards.astro';
+import MapSection from '../components/MapSection.astro';
+import CultureGuide from '../components/CultureGuide.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations, pageAlternates } from '../i18n/ui';
+
+const lang = 'th';
+const t = useTranslations(lang);
+---
+
+<Layout title={t('seo.home.title')} description={t('seo.home.description')} alternates={pageAlternates('')}>
+  <Header lang={lang} />
+  <Hero />
+  <MarketCore />
+  <ExploreCards lang={lang} />
+  <MapSection />
+  <CultureGuide />
+  <Footer lang={lang} />
+</Layout>

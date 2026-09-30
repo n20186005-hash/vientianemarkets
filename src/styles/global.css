@@ -3,11 +3,12 @@
 @theme {
   --color-mekong-blue: #1e3a8a;
   --color-sunset-orange: #f97316;
-  --font-sans: 'Inter', 'Noto Sans Lao', sans-serif;
+  --font-sans: 'Inter', 'Noto Sans Lao', 'Noto Sans Thai', 'Leelawadee UI', 'Thonburi', sans-serif;
 }
 
-/* Lao script needs extra vertical room so top/bottom diacritics aren't clipped */
-html[lang="lo"] body {
+/* Lao and Thai scripts need extra vertical room so stacked vowels/diacritics aren't clipped */
+html[lang="lo"] body,
+html[lang="th"] body {
   line-height: 1.75;
   letter-spacing: 0.01em;
 }

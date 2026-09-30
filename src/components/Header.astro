@@ -3,12 +3,13 @@ import LanguagePicker from './LanguagePicker.tsx';
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 interface Props {
-  lang?: 'lo' | 'en' | 'zh';
+  lang?: 'lo' | 'en' | 'zh' | 'th';
 }
 const { lang: langProp } = Astro.props;
 const lang = langProp ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const home = lang === 'lo' ? '/' : `/${lang}/`;
+const legalBase = lang === 'lo' ? '/lo' : `/${lang}`;
 ---
 
 <header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
@@ -21,7 +22,7 @@ const home = lang === 'lo' ? '/' : `/${lang}/`;
       <a href={`${home}#market-core`} class="hover:text-mekong-blue">{t('nav.markets')}</a>
       <a href={`${home}#map`} class="hover:text-mekong-blue">{t('nav.map')}</a>
       <a href={`${home}#faq`} class="hover:text-mekong-blue">{t('nav.faq')}</a>
-      <a href={t('footer.privacyUrl')} class="hover:text-mekong-blue">{t('nav.privacy')}</a>
+      <a href={`${legalBase}/privacy`} class="hover:text-mekong-blue">{t('footer.privacy')}</a>
     </nav>
     <LanguagePicker client:load lang={lang} path={Astro.url.pathname} />
   </div>

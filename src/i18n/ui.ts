@@ -2,6 +2,7 @@ export const languages = {
   lo: 'ພາສາລາວ',
   en: 'English',
   zh: '中文',
+  th: 'ไทย',
 };
 
 export const defaultLang = 'lo';
@@ -30,11 +31,13 @@ export function useTranslations(lang: keyof typeof languages) {
 import lo from './lo.json';
 import en from './en.json';
 import zh from './zh.json';
+import th from './th.json';
 
 export const ui = {
   lo,
   en,
-  zh
+  zh,
+  th
 } as const;
 
 export const DOMAIN = 'https://www.vientianemarkets.com';
@@ -45,10 +48,12 @@ export function pageAlternates(slug: string): { hreflang: string; href: string }
   const path = slug ? `/${slug}/` : '/';
   const enPath = slug ? `/en/${slug}/` : '/en/';
   const zhPath = slug ? `/zh/${slug}/` : '/zh/';
+  const thPath = slug ? `/th/${slug}/` : '/th/';
   return [
     { hreflang: 'lo', href: DOMAIN + path },
     { hreflang: 'en', href: DOMAIN + enPath },
     { hreflang: 'zh-CN', href: DOMAIN + zhPath },
+    { hreflang: 'th', href: DOMAIN + thPath },
     { hreflang: 'x-default', href: DOMAIN + path },
   ];
 }

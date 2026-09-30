@@ -2,11 +2,13 @@
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
 interface Props {
-  lang?: 'lo' | 'en' | 'zh';
+  lang?: 'lo' | 'en' | 'zh' | 'th';
 }
 const { lang: langProp } = Astro.props;
 const lang = langProp ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = lang === 'lo' ? '' : `/${lang}`;
+const legalBase = lang === 'lo' ? '/lo' : `/${lang}`;
 ---
 
 <footer class="bg-mekong-ink text-zinc-300">
@@ -17,22 +19,22 @@ const t = useTranslations(lang);
           <span class="text-mekong-gold">ຕະຫຼາດ</span>
           <span>Vientiane Markets Guide</span>
         </div>
-        <p class="mt-3 text-sm text-zinc-400">{t('footer.tagline')}</p>
+        <p class="mt-3 text-sm text-zinc-400">{t('footer.aboutText1')}</p>
       </div>
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('footer.explore')}</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('nav.markets')}</h3>
         <ul class="mt-3 space-y-2 text-sm">
-          <li><a href="/talat-sao/" class="hover:text-mekong-gold">Talat Sao</a></li>
-          <li><a href="/vientiane-night-market/" class="hover:text-mekong-gold">Vientiane Night Market</a></li>
-          <li><a href={lang === 'lo' ? '/en/' : `/${lang}/`} class="hover:text-mekong-gold">{t('nav.markets')}</a></li>
+          <li><a href={`${base}/talat-sao/`} class="hover:text-mekong-gold">{t('markets.talatSao.name')}</a></li>
+          <li><a href={`${base}/vientiane-night-market/`} class="hover:text-mekong-gold">{t('markets.nightMarket.name')}</a></li>
+          <li><a href={lang === 'lo' ? '/' : `/${lang}/`} class="hover:text-mekong-gold">{t('nav.title')}</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('footer.legal')}</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('footer.legalTitle')}</h3>
         <ul class="mt-3 space-y-2 text-sm">
-          <li><a href={t('footer.privacyUrl')} class="hover:text-mekong-gold">{t('footer.privacy')}</a></li>
-          <li><a href={t('footer.termsUrl')} class="hover:text-mekong-gold">{t('footer.terms')}</a></li>
-          <li><a href={t('footer.cookieUrl')} class="hover:text-mekong-gold">{t('footer.cookie')}</a></li>
+          <li><a href={`${legalBase}/privacy`} class="hover:text-mekong-gold">{t('footer.privacy')}</a></li>
+          <li><a href={`${legalBase}/terms`} class="hover:text-mekong-gold">{t('footer.terms')}</a></li>
+          <li><a href={`${legalBase}/cookie-settings`} class="hover:text-mekong-gold">{t('footer.cookie')}</a></li>
         </ul>
       </div>
     </div>

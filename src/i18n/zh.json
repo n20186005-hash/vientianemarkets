@@ -7,7 +7,9 @@
     "history": "历史文化",
     "itinerary": "一日路线",
     "culture": "礼仪速查",
-    "map": "地图交通"
+    "map": "地图交通",
+    "markets": "市场",
+    "faq": "常见问题"
   },
   "hero": {
     "title": "永珍早市 & 永珍夜市",
@@ -211,6 +213,7 @@
     "title": "地图与交通指南",
     "morning": "早市",
     "night": "夜市",
+    "bookHere": "在 Google 地图上查看",
     "transport": "交通建议",
     "tuktuk": "Tuk-tuk (嘟嘟车)：万象最常见的交通工具，乘坐前请务必先与司机确认好价格。",
     "loca": "Loca 网约车：老挝本土的打车软件，价格透明，安全便捷。",

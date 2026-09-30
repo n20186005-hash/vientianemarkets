@@ -7,7 +7,9 @@
     "history": "History",
     "itinerary": "Itinerary",
     "culture": "Tips & FAQ",
-    "map": "Map & Transport"
+    "map": "Map & Transport",
+    "markets": "Markets",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "Talat Sao & Vientiane Night Market",
@@ -211,6 +213,7 @@
     "title": "Interactive Map & Transportation",
     "morning": "Morning Market",
     "night": "Night Market",
+    "bookHere": "View on Google Maps",
     "transport": "Transportation Guide",
     "tuktuk": "Tuk-tuk: The most popular way to get around Vientiane. Always agree on the price before boarding.",
     "loca": "Loca: A convenient and safe ride-hailing app in Laos.",
