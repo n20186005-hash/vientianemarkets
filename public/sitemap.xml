@@ -2,30 +2,138 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vientianemarkets.com/</loc>
-    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.vientianemarkets.com/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/" />
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vientianemarkets.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.vientianemarkets.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://vientianemarkets.com/zh/</loc>
-    <xhtml:link rel="alternate" hreflang="lo" href="https://vientianemarkets.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://vientianemarkets.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://vientianemarkets.com/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://vientianemarkets.com/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://www.vientianemarkets.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/talat-sao/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/talat-sao/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/en/talat-sao/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/talat-sao/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/zh/talat-sao/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/talat-sao/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/talat-sao/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/vientiane-night-market/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/en/vientiane-night-market/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/zh/vientiane-night-market/</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/vientiane-night-market/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/vientiane-night-market/" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/lo/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/zh/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/lo/terms</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/terms" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/en/terms</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/terms" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.vientianemarkets.com/zh/terms</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://www.vientianemarkets.com/lo/terms" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.vientianemarkets.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.vientianemarkets.com/zh/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.vientianemarkets.com/lo/terms" />
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

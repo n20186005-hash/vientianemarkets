@@ -1,0 +1,29 @@
+---
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  lang: 'lo' | 'en' | 'zh';
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const base = lang === 'lo' ? '' : `/${lang}`;
+const tsHref = `${base}/talat-sao/`;
+const nmHref = `${base}/vientiane-night-market/`;
+---
+
+<section id="explore" class="bg-zinc-100 py-12">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="grid gap-6 sm:grid-cols-2">
+      <a href={tsHref} class="group block rounded-2xl border border-zinc-200 bg-white p-6 transition hover:border-mekong-blue">
+        <h3 class="text-xl font-bold text-mekong-ink">{t('markets.talatSao.name')}</h3>
+        <p class="mt-2 text-sm text-zinc-600">{t('markets.talatSao.desc1')} · {t('markets.talatSao.rating')}</p>
+        <span class="mt-4 inline-block font-semibold text-mekong-blue group-hover:underline">{t('markets.talatSao.name')} →</span>
+      </a>
+      <a href={nmHref} class="group block rounded-2xl border border-zinc-200 bg-white p-6 transition hover:border-mekong-blue">
+        <h3 class="text-xl font-bold text-mekong-ink">{t('markets.nightMarket.name')}</h3>
+        <p class="mt-2 text-sm text-zinc-600">{t('markets.nightMarket.desc1')} · {t('markets.nightMarket.rating')}</p>
+        <span class="mt-4 inline-block font-semibold text-mekong-blue group-hover:underline">{t('markets.nightMarket.name')} →</span>
+      </a>
+    </div>
+  </div>
+</section>

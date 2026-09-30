@@ -36,3 +36,19 @@ export const ui = {
   en,
   zh
 } as const;
+
+export const DOMAIN = 'https://www.vientianemarkets.com';
+
+// Build hreflang alternates for a page. `slug` is empty for the homepage,
+// or 'talat-sao' / 'vientiane-night-market' for the entity pages.
+export function pageAlternates(slug: string): { hreflang: string; href: string }[] {
+  const path = slug ? `/${slug}/` : '/';
+  const enPath = slug ? `/en/${slug}/` : '/en/';
+  const zhPath = slug ? `/zh/${slug}/` : '/zh/';
+  return [
+    { hreflang: 'lo', href: DOMAIN + path },
+    { hreflang: 'en', href: DOMAIN + enPath },
+    { hreflang: 'zh-CN', href: DOMAIN + zhPath },
+    { hreflang: 'x-default', href: DOMAIN + path },
+  ];
+}

@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import MarketHero from './MarketHero.astro';
+import TalatSaoContent from './TalatSaoContent.astro';
+import NightMarketContent from './NightMarketContent.astro';
+import { useTranslations, pageAlternates } from '../i18n/ui';
+
+interface Props {
+  lang: 'lo' | 'en' | 'zh';
+  market: 'talatSao' | 'nightMarket';
+  slug: string;
+}
+const { lang, market, slug } = Astro.props;
+const t = useTranslations(lang);
+const title = t(`seo.${market}.title`);
+const description = t(`seo.${market}.description`);
+const alternates = pageAlternates(slug);
+---
+
+<Layout title={title} description={description} alternates={alternates}>
+  <Header lang={lang} />
+  <MarketHero lang={lang} market={market} />
+  {market === 'talatSao' ? <TalatSaoContent lang={lang} /> : <NightMarketContent lang={lang} />}
+  <Footer lang={lang} />
+</Layout>

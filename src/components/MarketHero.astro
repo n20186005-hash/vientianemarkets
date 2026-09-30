@@ -1,0 +1,29 @@
+---
+import { useTranslations } from '../i18n/ui';
+
+interface Props {
+  lang: 'lo' | 'en' | 'zh';
+  market: 'talatSao' | 'nightMarket';
+}
+const { lang, market } = Astro.props;
+const t = useTranslations(lang);
+const key = market === 'talatSao' ? 'ts' : 'nm';
+const rating = t(`markets.${market}.rating`);
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-mekong-blue to-mekong-teal text-white">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+    <p class="text-sm font-medium uppercase tracking-widest text-mekong-gold">{t(`${key}.heroKicker`)}</p>
+    <h1 class="mt-3 text-4xl font-bold sm:text-5xl">{t(`${key}.heroTitle`)}</h1>
+    <p class="mt-3 text-lg text-white/80">{t(`${key}.heroSubtitle`)}</p>
+    <div class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm">
+      <span class="text-mekong-gold">★</span>
+      <span>{rating}</span>
+    </div>
+    <div class="mt-8">
+      <a href="#map" class="inline-flex items-center gap-2 rounded-lg bg-mekong-gold px-5 py-3 font-semibold text-mekong-ink hover:opacity-90">
+        {t('map.bookHere')}
+      </a>
+    </div>
+  </div>
+</section>

@@ -3,29 +3,22 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import MarketCore from '../../components/MarketCore.astro';
-import History from '../../components/History.astro';
-import Itinerary from '../../components/Itinerary.astro';
-import CultureGuide from '../../components/CultureGuide.astro';
-import Gallery from '../../components/Gallery.astro';
-import Reviews from '../../components/Reviews.astro';
+import ExploreCards from '../../components/ExploreCards.astro';
 import MapSection from '../../components/MapSection.astro';
+import CultureGuide from '../../components/CultureGuide.astro';
 import Footer from '../../components/Footer.astro';
-import { useTranslations } from '../../i18n/ui';
+import { useTranslations, pageAlternates } from '../../i18n/ui';
 
-const t = useTranslations('zh');
+const lang = 'zh';
+const t = useTranslations(lang);
 ---
 
-<Layout title={t('hero.title') as string} description={t('hero.subtitle') as string}>
-  <Header />
-  <main>
-    <Hero />
-    <MarketCore />
-    <History />
-    <Itinerary />
-    <CultureGuide />
-    <Gallery />
-    <Reviews />
-    <MapSection />
-  </main>
-  <Footer />
+<Layout title={t('seo.home.title')} description={t('seo.home.description')} alternates={pageAlternates('')}>
+  <Header lang={lang} />
+  <Hero />
+  <MarketCore />
+  <ExploreCards lang={lang} />
+  <MapSection />
+  <CultureGuide />
+  <Footer lang={lang} />
 </Layout>

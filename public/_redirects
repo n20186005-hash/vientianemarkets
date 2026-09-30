@@ -1,9 +1,2 @@
-# Vientiane Markets — Cloudflare Pages edge redirects
-# Default language is "lo" (Lao) and it is served at the site ROOT "/"
-# (src/pages/index.astro renders the Lao page; src/i18n/ui.ts defaultLang = 'lo').
-# Therefore a "/  /lo/  302" rule would 404 (there is no /lo/ index page,
-# only /lo/privacy, /lo/terms, /lo/cookie-settings). Do NOT add that rule.
-#
-# Safety redirect: some external links may point at "/lo" (no trailing slash);
-# send them to the real Lao home at "/".
-/lo    /    302
+# www + HTTPS + trailing-slash canonicalization is handled at the Cloudflare
+# dashboard (Always Use HTTPS + Redirect Rules). No path-level redirects needed.

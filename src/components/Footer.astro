@@ -1,70 +1,41 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/ui';
 
-const lang = getLangFromUrl(Astro.url);
+interface Props {
+  lang?: 'lo' | 'en' | 'zh';
+}
+const { lang: langProp } = Astro.props;
+const lang = langProp ?? getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const morningMap = 'https://maps.google.com/?cid=15367807096000210240';
-const nightMap = 'https://maps.google.com/?cid=14960580795493471890';
-const tourism = 'https://www.tourismlaos.org/';
-const mict = 'https://mict.gov.la/';
-const privacyHref = `/${lang}/privacy`;
-const termsHref = `/${lang}/terms`;
 ---
 
-<footer class="bg-slate-900 text-slate-400">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Column 1: About & Disclaimer -->
+<footer class="bg-mekong-ink text-zinc-300">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
       <div>
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-8 h-8 bg-mekong-blue rounded-lg flex items-center justify-center text-white font-bold">V</div>
-          <span class="font-bold text-white">{t('footer.aboutTitle')}</span>
+        <div class="flex items-center gap-2 font-bold text-white">
+          <span class="text-mekong-gold">ຕະຫຼາດ</span>
+          <span>Vientiane Markets Guide</span>
         </div>
-        <p class="text-sm leading-relaxed mb-3">{t('footer.aboutText1')}</p>
-        <p class="text-sm leading-relaxed">{t('footer.aboutText2')}</p>
+        <p class="mt-3 text-sm text-zinc-400">{t('footer.tagline')}</p>
       </div>
-
-      <!-- Column 2: Official & Reference Links -->
       <div>
-        <h3 class="text-white font-semibold mb-4">{t('footer.resTitle')}</h3>
-        <ul class="space-y-3 text-sm">
-          <li>
-            <a href={tourism} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{t('footer.resTourism')}</a>
-          </li>
-          <li>
-            <a href={mict} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{t('footer.resMict')}</a>
-          </li>
-          <li>
-            <a href={morningMap} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{t('footer.resMorningMap')}</a>
-          </li>
-          <li>
-            <a href={nightMap} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">{t('footer.resNightMap')}</a>
-          </li>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('footer.explore')}</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="/talat-sao/" class="hover:text-mekong-gold">Talat Sao</a></li>
+          <li><a href="/vientiane-night-market/" class="hover:text-mekong-gold">Vientiane Night Market</a></li>
+          <li><a href={lang === 'lo' ? '/en/' : `/${lang}/`} class="hover:text-mekong-gold">{t('nav.markets')}</a></li>
         </ul>
       </div>
-
-      <!-- Column 3: Privacy & Terms -->
       <div>
-        <h3 class="text-white font-semibold mb-4">{t('footer.legalTitle')}</h3>
-        <ul class="space-y-3 text-sm">
-          <li>
-            <a href={privacyHref} class="hover:text-white transition-colors">{t('footer.privacy')}</a>
-          </li>
-          <li>
-            <a href={termsHref} class="hover:text-white transition-colors">{t('footer.terms')}</a>
-          </li>
-          <li>
-            <a href={`/${lang}/cookie-settings`} class="hover:text-white transition-colors">{t('footer.cookie')}</a>
-          </li>
+        <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-200">{t('footer.legal')}</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href={t('footer.privacyUrl')} class="hover:text-mekong-gold">{t('footer.privacy')}</a></li>
+          <li><a href={t('footer.termsUrl')} class="hover:text-mekong-gold">{t('footer.terms')}</a></li>
+          <li><a href={t('footer.cookieUrl')} class="hover:text-mekong-gold">{t('footer.cookie')}</a></li>
         </ul>
       </div>
     </div>
-  </div>
-
-  <div class="border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm">
-      {t('footer.copyright')}
-    </div>
+    <p class="mt-8 border-t border-zinc-700 pt-6 text-sm text-zinc-400">{t('footer.copyright')}</p>
   </div>
 </footer>

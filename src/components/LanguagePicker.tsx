@@ -1,42 +1,46 @@
-import React, { useState } from 'react';
-import { Globe } from 'lucide-react';
 import { languages } from '../i18n/ui';
+import { useState } from 'react';
 
-export default function LanguagePicker({ currentLang }: { currentLang: string }) {
-  const [isOpen, setIsOpen] = useState(false);
+interface Props {
+  lang?: string;
+  path?: string;
+}
 
-  const getPath = (lang: string) => {
-    if (lang === 'lo') return '/';
-    return `/${lang}/`;
+export default function LanguagePicker({ lang = 'lo', path = '/' }: Props) {
+  const [open, setOpen] = useState(false);
+
+  const getPath = (targetLang: string) => {
+    const base = path.replace(/^\/(en|zh|lo)(\/|$)/, '/');
+    return targetLang === 'lo' ? base : `/${targetLang}${base}`;
   };
 
-  return (
-    <div className="relative inline-block text-left">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center justify-center gap-2 bg-white/80 border border-gray-200 shadow-sm rounded-lg px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-gray-50 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mekong-blue"
-      >
-        <Globe className="w-4 h-4" />
-        {languages[currentLang as keyof typeof languages]}
-      </button>
+  const items = Object.entries(languages);
 
-      {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-          <div className="py-1" role="menu" aria-orientation="vertical">
-            {Object.entries(languages).map(([lang, label]) => (
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex items-center gap-1 rounded-full border border-zinc-300 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:border-mekong-blue"
+        aria-label="Select language"
+      >
+        <span>{languages[lang as keyof typeof languages] ?? languages.lo}</span>
+        <span className="text-xs">▾</span>
+      </button>
+      {open && (
+        <ul className="absolute right-0 mt-2 w-40 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-lg">
+          {items.map(([code, label]) => (
+            <li key={code}>
               <a
-                key={lang}
-                href={getPath(lang)}
-                className={`block px-4 py-2 text-sm ${
-                  currentLang === lang ? 'bg-zinc-100 text-mekong-blue font-semibold' : 'text-zinc-700 hover:bg-zinc-50'
-                }`}
-                role="menuitem"
+                href={getPath(code)}
+                className="block px-4 py-2 text-sm text-zinc-700 hover:bg-mekong-blue hover:text-white"
+                onClick={() => setOpen(false)}
               >
                 {label}
               </a>
-            ))}
-          </div>
-        </div>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vientianemarkets.com/sitemap.xml
+Sitemap: https://www.vientianemarkets.com/sitemap.xml
