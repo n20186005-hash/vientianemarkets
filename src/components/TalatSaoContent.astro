@@ -9,7 +9,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const k = 'ts';
-const faqs = Object.values(t(`${k}.faq`)) as { q: string; a: string }[];
+const faqs = Object.values(t(`${k}.faq`) as unknown as Record<string, { q: string; a: string }>);
 ---
 
 <div class="mx-auto max-w-3xl space-y-12 px-4 py-12">
