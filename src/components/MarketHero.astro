@@ -9,6 +9,8 @@ const { lang, market } = Astro.props;
 const t = useTranslations(lang);
 const key = market === 'talatSao' ? 'ts' : 'nm';
 const rating = t(`markets.${market}.rating`);
+const mapKey = market === 'talatSao' ? 'morning' : 'night';
+const mapUrl = t(`reviews.${mapKey}.mapUrl`) as string;
 ---
 
 <section class="relative overflow-hidden bg-gradient-to-br from-mekong-blue to-mekong-teal text-white">
@@ -19,9 +21,10 @@ const rating = t(`markets.${market}.rating`);
     <div class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm">
       <span class="text-mekong-gold">★</span>
       <span>{rating}</span>
+      <span class="text-white/60 text-xs">· {t('map.source')}</span>
     </div>
     <div class="mt-8">
-      <a href="#map" class="inline-flex items-center gap-2 rounded-lg bg-mekong-gold px-5 py-3 font-semibold text-mekong-ink hover:opacity-90">
+      <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-mekong-gold px-5 py-3 font-semibold text-mekong-ink hover:opacity-90">
         {t('map.bookHere')}
       </a>
     </div>

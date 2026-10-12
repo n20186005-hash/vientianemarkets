@@ -7,13 +7,25 @@ import ExploreCards from '../../components/ExploreCards.astro';
 import MapSection from '../../components/MapSection.astro';
 import CultureGuide from '../../components/CultureGuide.astro';
 import Footer from '../../components/Footer.astro';
-import { useTranslations, pageAlternates } from '../../i18n/ui';
+import { useTranslations, pageAlternates, DOMAIN } from '../../i18n/ui';
+import { webSiteSchema, webPageSchema, breadcrumbSchema } from '../../lib/schema';
 
 const lang = 'th';
 const t = useTranslations(lang);
+const homeUrl = `${DOMAIN}/th/`;
+const schema = [
+  webSiteSchema(),
+  webPageSchema(homeUrl, t('seo.home.title'), t('seo.home.description'), lang),
+  breadcrumbSchema([{ name: t('nav.title'), url: homeUrl }], `${homeUrl}#breadcrumb`),
+];
 ---
 
-<Layout title={t('seo.home.title')} description={t('seo.home.description')} alternates={pageAlternates('')}>
+<Layout
+  title={t('seo.home.title')}
+  description={t('seo.home.description')}
+  alternates={pageAlternates('')}
+  schema={schema}
+>
   <Header lang={lang} />
   <Hero />
   <MarketCore />

@@ -1,0 +1,19 @@
+LO home title : ຕະຫຼາດເຊົ້າ ແລະ ຕະຫຼາດກາງຄືນ ວຽງຈັນ | Talat Sao &amp; Night Market
+EN TS  title  : Talat Sao Vientiane – Morning Market Hours &amp; Shopping Guide
+EN NM  title  : Vientiane Night Market – Hours, Location &amp; Shopping Guide
+TH NM  title  : ตลาดกลางคืนเวียงจันทน์ | เวลาเปิด พิกัด และคู่มือเที่ยว
+ZH TS  title  : 万象塔銮绍早市 | 营业时间、购物与交通指南
+LO home ld+json count: 4
+EN TS  ld+json count: 3
+EN TS TouristAttraction: true
+EN TS FAQPage         : true
+EN TS BreadcrumbList  : true
+EN TS aggregateRating  : true
+EN TS maps fixed (2zP3kvc4hLKQ7q8V6): true
+EN TS stale maps gone (ccwSX7): true
+EN NM night transport (22:00): true
+EN NM Best Sunset Spot       : true
+EN TS Market Stalls vs Mall  : true
+LO home WebSite schema      : true
+LO footer lastChecked (2026) : true
+EN TS googleNote present     : true

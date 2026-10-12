@@ -28,7 +28,7 @@
     "talatSao": {
       "name": "Talat Sao",
       "type": "Shopping Mall & Traditional Market",
-      "rating": "3.9 (6,900+ reviews)",
+      "rating": "3.9 (6,963 reviews)",
       "desc1": "Traditional Lao Textiles (Sinh)",
       "desc2": "Gold Jewelry & Antiques",
       "desc3": "Modern Shopping Center"
@@ -36,7 +36,7 @@
     "nightMarket": {
       "name": "Vientiane Night Market",
       "type": "Riverside Open-air Market",
-      "rating": "4.0 (3,000+ reviews)",
+      "rating": "4.0 (3,039 reviews)",
       "desc1": "Mekong River Sunset Views",
       "desc2": "Printed Clothing & Handicrafts",
       "desc3": "Night Walking Route",
@@ -61,7 +61,7 @@
     "title": "History, Legends & Cultural Background",
     "evolution": {
       "title": "The Evolution of Talat Sao: Vientiane's Commercial Origin",
-      "desc": "Since the 1960s, Talat Sao has been the trade hub of the Mekong basin. From its beginnings as a wooden-shed open market, it grew into Laos' first modern shopping complex with elevators and air-conditioned malls, and remains Vientiane's most iconic retail landmark."
+      "desc": "Since the 1960s, Talat Sao has been a major trading hub of the Mekong basin. From its beginnings as a wooden-shed open market, it grew into one of Laos' earliest modern shopping complexes with elevators and air-conditioned malls, and remains one of Vientiane's most recognisable retail landmarks."
     },
     "textile": {
       "title": "The Hidden Code of the Lao Sinh",
@@ -69,7 +69,7 @@
     },
     "etiquette": {
       "title": "Gold, Baci & Wedding Culture",
-      "desc": "Talat Sao is Vientiane's largest gold-trading centre. In the traditional Lao Baci blessing ceremony and wedding customs, pure-gold jewellery is more than wealth — it is a vessel of prayer and protection. To gift gold is to gift a blessing."
+      "desc": "Talat Sao is one of Vientiane's best-known areas for gold trading. In the traditional Lao Baci blessing ceremony and wedding customs, pure-gold jewellery is more than wealth — it is a vessel of prayer and protection. To gift gold is to gift a blessing."
     },
     "naga": {
       "title": "The Mekong Naga Water-Spirit Legend",
@@ -158,11 +158,12 @@
   },
   "reviews": {
     "title": "Visitor Reviews",
+    "googleNote": "Ratings are a snapshot from Google Maps and may change — verify before you go.",
     "morning": {
       "name": "Talat Sao (Morning Market)",
       "tags": ["Rich handicrafts", "Great for souvenirs", "Traditional textiles"],
       "mapLabel": "View Morning Market Reviews",
-      "mapUrl": "https://maps.app.goo.gl/ccwSX7H45Zj4bTTK8"
+      "mapUrl": "https://maps.app.goo.gl/2zP3kvc4hLKQ7q8V6"
     },
     "night": {
       "name": "Vientiane Night Market",
@@ -214,6 +215,7 @@
     "morning": "Morning Market",
     "night": "Night Market",
     "bookHere": "View on Google Maps",
+    "source": "Google Maps",
     "transport": "Transportation Guide",
     "tuktuk": "Tuk-tuk: The most popular way to get around Vientiane. Always agree on the price before boarding.",
     "loca": "Loca: A convenient and safe ride-hailing app in Laos.",
@@ -231,6 +233,7 @@
     "aboutTitle": "Vientiane Markets Complete Guide",
     "aboutText1": "This website is an independent, non-profit visitor information project. We are not affiliated with any government agency or official organization.",
     "aboutText2": "Data Source: The attraction information cited on this site is verified against public materials from the Lao Tourism Board and the official Lao government portal, and contains no commercial endorsements.",
+    "lastChecked": "Information last verified: October 2026",
     "resTitle": "Official & Reference Links",
     "resTourism": "Lao Tourism Board",
     "resMict": "Ministry of Information, Culture and Tourism",
@@ -248,16 +251,16 @@
   },
   "seo": {
     "home": {
-      "title": "Vientiane Markets Guide | Talat Sao & Vientiane Night Market",
-      "description": "Plan your visit to Vientiane's two iconic markets — Talat Sao (morning market) and the Vientiane Night Market. Opening hours, what to buy, directions, maps and shopping tips."
+      "title": "Talat Sao & Vientiane Night Market — Hours, Map & Shopping Guide",
+      "description": "Compare Vientiane's two famous markets: Talat Sao Morning Market and the Vientiane Night Market on the Mekong. Opening hours, what to buy, maps, transport and shopping tips."
     },
     "talatSao": {
-      "title": "Talat Sao Vientiane — Morning Market, Hours & Shopping Guide",
-      "description": "Talat Sao (Vientiane Morning Market): opening hours, Lao textiles & sinh, gold & jewelry shops, money exchange, the shopping mall, bus station and how to get there."
+      "title": "Talat Sao Vientiane – Morning Market Hours & Shopping Guide",
+      "description": "Plan your visit to Talat Sao Morning Market in Vientiane. Discover market hours, shopping areas, souvenirs, directions and practical tips."
     },
     "nightMarket": {
-      "title": "Vientiane Night Market — Opening Hours, Shopping & Visitor Guide",
-      "description": "Vientiane Night Market by the Mekong: opening hours, street food, souvenirs, clothing, best time for sunset, prices, bargaining and how to get there."
+      "title": "Vientiane Night Market – Hours, Location & Shopping Guide",
+      "description": "Explore Vientiane Night Market by the Mekong River. Find opening hours, location, souvenirs, shopping tips and how to get there."
     }
   },
   "ts": {
@@ -265,7 +268,7 @@
     "heroTitle": "Talat Sao",
     "heroSubtitle": "ຕະຫຼາດເຊົ້າ · ตลาดเช้าเวียงจันทน์ · Talat Sao",
     "atAGlanceTitle": "Talat Sao at a Glance",
-    "atAGlanceBody": "Talat Sao (ຕະຫຼາດເຊົ້າ), literally \"Morning Market,\" is Vientiane's oldest and largest daily market. It pairs a modern, air-conditioned shopping mall with streets of traditional stalls selling Lao textiles, gold, electronics and souvenirs.",
+    "atAGlanceBody": "Talat Sao (ຕະຫຼາດເຊົ້າ), literally \"Morning Market,\" is one of Vientiane's best-known and busiest daily markets. It pairs a modern, air-conditioned shopping mall with streets of traditional stalls selling Lao textiles, gold, electronics and souvenirs.",
     "openingHoursTitle": "Opening Hours",
     "openingHoursBody": "Talat Sao is generally open every day from 07:00 to 17:00. The indoor mall and supermarket keep longer hours, while individual textile and gold stalls are busiest before noon and quieten in the late afternoon.",
     "whatToBuyTitle": "What to Buy at Talat Sao",
@@ -273,9 +276,11 @@
     "souvenirsTitle": "Souvenirs",
     "souvenirsBody": "Look for lacquerware, woven baskets, silver charms, hill-tribe crafts, packaged Lao coffee and tea, and miniature naga woodcarvings — easy to pack and ideal gifts.",
     "moneyExchangeTitle": "Money Exchange at Talat Sao",
-    "moneyExchangeBody": "Talat Sao is one of Vientiane's most reliable spots to change cash. Several licensed money changers and gold shops exchange US dollars, Thai baht and euros; compare the rates shown on their boards before you commit, carry small denominations, and confirm the buy/sell rate. ATMs for Lao kip (LAK) are scattered around the complex. Rates shift daily, so always check the board on the day rather than relying on a fixed number.",
+    "moneyExchangeBody": "Money changers and gold shops around Talat Sao exchange US dollars, Thai baht and euros, but rates and licences vary booth by booth — always compare the boards before you commit, carry small denominations, and confirm the buy/sell rate. ATMs for Lao kip (LAK) are scattered around the complex. Rates shift daily, so check the board on the day rather than relying on a fixed number.",
     "mallTitle": "Talat Sao Mall",
     "mallBody": "The air-conditioned Talat Sao Mall houses a supermarket, clothing and electronics stores, phone shops, a food court and clean restrooms — a cool, convenient break from the heat and a good place to compare fixed prices.",
+    "marketVsMallTitle": "Market Stalls vs the Mall",
+    "marketVsMallBody": "Talat Sao is two experiences in one place. The traditional side — open-fronted shophouses and sidewalk stalls — is where you haggle for textiles, gold, electronics and fresh snacks; hours here are flexible and many vendors take a midday break. The air-conditioned Talat Sao Mall, by contrast, keeps fixed shop hours, set prices and a food court, which makes it the easier choice in the heat. Give yourself time for both: the stalls for character and bargains, the mall for comfort and comparison.",
     "howToGetThereTitle": "How to Get to Talat Sao",
     "howToGetThereBody": "Talat Sao sits on Avenue Lane Xang (Th Lane Xang), about 1.2 km east of the Mekong riverfront and a short tuk-tuk or Loca ride from most city-centre hotels. It is also the city's main bus hub (see below).",
     "busStationTitle": "Talat Sao Bus Station",
@@ -314,14 +319,20 @@
     "foodBody": "Food stalls and nearby restaurants serve grilled chicken (ping kai), papaya salad (tam mak hoong), Lao sausage, noodles and fresh fruit shakes at low prices — a relaxed, social dinner by the river.",
     "souvenirsTitle": "Souvenirs",
     "souvenirsBody": "Look for naga-themed keyrings, lanterns, woven placemats, silver trinkets and small Buddha images; most are light and easy to carry home.",
+    "zonesTitle": "How the Market is Laid Out",
+    "zonesBody": "The night market is one long north–south strip along the promenade. The southern end near Chao Anouvong Park is busiest, with clothing and souvenir stalls; the middle spans jewellery, lamps and gifts; the northern end eases into food stalls and open seating. The sit-down restaurants and river bars sit just behind the stalls, so 'market food' and 'restaurant dinner' are different zones — step off the promenade to choose between them.",
     "clothingTitle": "Clothing & Textiles",
     "clothingBody": "Rows of stalls sell colourful printed dresses, elephant-print trousers, silk mixes and lightweight tops. Sizes and quality vary, so check seams and try things on where possible.",
     "bestTimeTitle": "Best Time to Visit",
     "bestTimeBody": "The dry season (November–March) has the most comfortable evenings. For photos, aim for 17:30–18:30 when the sky turns gold and blue over the Mekong; for atmosphere, come after 19:00.",
+    "sunsetSpotTitle": "Best Sunset Spot",
+    "sunsetSpotBody": "For the Mekong sunset, walk to the open promenade in front of Chao Anouvong Park and face west across the water — the railings and the small pier are the most popular photo points. Arrive by 17:30 in the dry season to claim a spot before the light turns gold.",
     "pricesTitle": "Prices & Bargaining",
     "pricesBody": "Almost everything is negotiable — start around 60–70% of the first price and settle with a smile. Fixed-price restaurants and a few branded stalls are the exception. Carry Lao kip in small notes.",
     "howToGetThereTitle": "How to Get There",
     "howToGetThereBody": "Walk from Talat Sao in about 15 minutes, or take a tuk-tuk / Loca ride to the riverfront. Parking is limited, so walking or ride-hailing is easiest in the evening.",
+    "nightTransportTitle": "Getting Back at Night",
+    "nightTransportBody": "The market winds down around 22:00. Tuk-tuks and Loca ride-hailing cars wait along the promenade and on the streets just behind it; fares rise a little after dark and can surge when the stalls close, so agree a price or check the app estimate before you board. If you are staying in the city centre, the roughly 1.2 km walk back is safe and well lit.",
     "vsTalatTitle": "Night Market vs Talat Sao",
     "vsTalatBody": "The Night Market is an evening, open-air riverside market built around food and atmosphere; Talat Sao is a daytime market built around shopping for goods. Pair them: shop in the morning, stroll the river at night.",
     "nearbyTitle": "Nearby Attractions",

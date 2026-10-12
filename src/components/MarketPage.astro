@@ -5,7 +5,8 @@ import Footer from './Footer.astro';
 import MarketHero from './MarketHero.astro';
 import TalatSaoContent from './TalatSaoContent.astro';
 import NightMarketContent from './NightMarketContent.astro';
-import { useTranslations, pageAlternates } from '../i18n/ui';
+import { useTranslations, pageAlternates, DOMAIN } from '../i18n/ui';
+import { attractionSchema, faqSchema, breadcrumbSchema } from '../lib/schema';
 
 interface Props {
   lang: 'lo' | 'en' | 'zh' | 'th';
@@ -14,13 +15,45 @@ interface Props {
 }
 const { lang, market, slug } = Astro.props;
 const t = useTranslations(lang);
+const key = market === 'talatSao' ? 'ts' : 'nm';
 const title = t(`seo.${market}.title`);
 const description = t(`seo.${market}.description`);
 const alternates = pageAlternates(slug);
+
+const faqs = Object.values(
+  t(`${key}.faq`) as unknown as Record<string, { q: string; a: string }>,
+);
+
+const canonical = `${DOMAIN}${lang === 'lo' ? '' : `/${lang}`}/${slug}/`;
+const homeUrl = `${DOMAIN}${lang === 'lo' ? '/' : `/${lang}/`}`;
+const marketName = t(`markets.${market}.name`);
+
+const schema = [
+  attractionSchema(market, canonical),
+  faqSchema(faqs),
+  breadcrumbSchema(
+    [
+      { name: t('nav.title'), url: homeUrl },
+      { name: marketName, url: canonical },
+    ],
+    `${canonical}#breadcrumb`,
+  ),
+];
 ---
 
-<Layout title={title} description={description} alternates={alternates}>
+<Layout title={title} description={description} alternates={alternates} schema={schema}>
   <Header lang={lang} />
+
+  <nav aria-label="Breadcrumb" class="mx-auto max-w-6xl px-4 pt-4 text-sm text-zinc-500">
+    <ol class="flex flex-wrap items-center gap-2">
+      <li>
+        <a href={homeUrl} class="hover:text-mekong-blue">{t('nav.title')}</a>
+      </li>
+      <li aria-hidden="true">/</li>
+      <li class="font-medium text-zinc-700">{marketName}</li>
+    </ol>
+  </nav>
+
   <MarketHero lang={lang} market={market} />
   {market === 'talatSao' ? <TalatSaoContent lang={lang} /> : <NightMarketContent lang={lang} />}
   <Footer lang={lang} />

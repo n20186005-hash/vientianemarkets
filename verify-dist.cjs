@@ -1,0 +1,34 @@
+const fs = require('fs');
+const rd = (p) => fs.readFileSync(p, 'utf8');
+function check() {
+  const out = [];
+  const lo = rd('dist/index.html');
+  const enTS = rd('dist/en/talat-sao/index.html');
+  const enNM = rd('dist/en/vientiane-night-market/index.html');
+  const thNM = rd('dist/th/vientiane-night-market/index.html');
+  const zhTS = rd('dist/zh/talat-sao/index.html');
+  const title = (h) => (h.match(/<title>(.*?)<\/title>/) || [])[1] || '';
+  const cnt = (h, re) => (h.match(re) || []).length;
+  out.push('LO home title : ' + title(lo));
+  out.push('EN TS  title  : ' + title(enTS));
+  out.push('EN NM  title  : ' + title(enNM));
+  out.push('TH NM  title  : ' + title(thNM));
+  out.push('ZH TS  title  : ' + title(zhTS));
+  out.push('LO home ld+json count: ' + cnt(lo, /application\/ld\+json/g));
+  out.push('EN TS  ld+json count: ' + cnt(enTS, /application\/ld\+json/g));
+  out.push('EN TS TouristAttraction: ' + enTS.includes('"TouristAttraction"'));
+  out.push('EN TS FAQPage         : ' + enTS.includes('"FAQPage"'));
+  out.push('EN TS BreadcrumbList  : ' + enTS.includes('"BreadcrumbList"'));
+  out.push('EN TS aggregateRating  : ' + enTS.includes('"aggregateRating"'));
+  out.push('EN TS maps fixed (2zP3kvc4hLKQ7q8V6): ' + enTS.includes('2zP3kvc4hLKQ7q8V6'));
+  out.push('EN TS stale maps gone (ccwSX7): ' + (!enTS.includes('ccwSX7H45Zj4bTTK8')));
+  out.push('EN NM night transport (22:00): ' + enNM.includes('22:00'));
+  out.push('EN NM Best Sunset Spot       : ' + enNM.includes('Best Sunset Spot'));
+  out.push('EN TS Market Stalls vs Mall  : ' + enTS.includes('Market Stalls vs the Mall'));
+  out.push('LO home WebSite schema      : ' + lo.includes('"WebSite"'));
+  out.push('LO footer lastChecked (2026) : ' + lo.includes('2026'));
+  out.push('EN TS googleNote present     : ' + enTS.includes('snapshot from Google Maps'));
+  return out.join('\n');
+}
+fs.writeFileSync('verify-result.txt', check(), { encoding: 'utf8' });
+console.log('written verify-result.txt');
