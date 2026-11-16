@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/ui';
+import { guideSlugs, guides } from '../lib/guides';
 
 interface Props {
   lang: 'lo' | 'en' | 'zh' | 'th';
@@ -24,6 +25,14 @@ const nmHref = `${base}/vientiane-night-market/`;
         <p class="mt-2 text-sm text-zinc-600">{t('markets.nightMarket.desc1')} · {t('markets.nightMarket.rating')}</p>
         <span class="mt-4 inline-block font-semibold text-mekong-blue group-hover:underline">{t('markets.nightMarket.name')} →</span>
       </a>
+    </div>
+  </div>
+</section>
+<section class="bg-white py-12" aria-label="Market guides">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-2xl font-bold text-mekong-ink">{lang === 'zh' ? '万象市场实用攻略' : lang === 'th' ? 'คู่มือเที่ยวตลาดเวียงจันทน์' : lang === 'lo' ? 'ຄູ່ມືທ່ຽວຕະຫຼາດວຽງຈັນ' : 'Vientiane market guides'}</h2>
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      {guideSlugs.map(slug => <a href={`${base}/guides/${slug}/`} class="rounded-xl border border-zinc-200 p-5 hover:border-mekong-blue"><h3 class="font-semibold text-mekong-ink">{guides[lang][slug].title}</h3><p class="mt-2 text-sm text-zinc-600">{guides[lang][slug].intro}</p></a>)}
     </div>
   </div>
 </section>
