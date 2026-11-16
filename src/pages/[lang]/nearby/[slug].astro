@@ -1,0 +1,7 @@
+---
+import NearbyPage from '../../../components/NearbyPage.astro';
+import { nearbySlugs } from '../../../lib/nearby';
+export function getStaticPaths() { return (['en', 'zh', 'th'] as const).flatMap(lang => nearbySlugs.map(slug => ({ params: { lang, slug } }))); }
+const { lang, slug } = Astro.params;
+---
+<NearbyPage lang={lang as 'en' | 'zh' | 'th'} slug={slug as (typeof nearbySlugs)[number]}/>

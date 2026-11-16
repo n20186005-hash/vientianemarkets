@@ -47,3 +47,46 @@ const faqs: Record<GuideLang, Extra['faq']> = {
 };
 
 export function guideExtra(lang: GuideLang, _slug: GuideSlug): Extra { return { ...localized[lang], route: routes[lang], faq: faqs[lang] }; }
+
+export const visitDetails: Record<GuideLang, {
+  discover: string; tips: string; highlights: string; hours: string; hoursText: string; tickets: string; ticketText: string;
+  transport: string; transportText: string; cautions: string; cautionText: string; stay: string; stayText: string;
+  reviews: string; reviewText: string; direction: string; compare: string; nearby: string;
+}> = {
+  en: {
+    discover: 'Explore the market', tips: 'Before you visit', highlights: 'What makes this place distinctive', hours: 'Opening hours', hoursText: 'The site’s October 2026 reference lists Talat Sao at approximately 07:00–17:00 and the riverside Night Market at approximately 18:00–22:00. These are reference ranges, not live opening status. Individual stalls, mall shops and holiday hours vary; check on site before travelling.',
+    tickets: 'Admission and costs', ticketText: 'Browsing public market trading areas normally does not require an entry ticket. Goods, transport, food and any privately operated services are paid separately. No fixed shopping budget can be promised; compare displayed prices before paying.',
+    transport: 'Getting here', transportText: 'For Talat Sao, use Lane Xang Avenue at the Khu Vieng Road intersection. Choose a walk from central accommodation, a tuk-tuk or an app-based car after checking your route. For the Night Market, navigate separately to the Mekong riverfront by Chao Anouvong Park. Do not use one market pin for both.',
+    cautions: 'Visitor notes', cautionText: 'Keep valuables secure in busy aisles; protect yourself from midday sun when walking between buildings. Some passages may be uneven or crowded. Ask before photographing people or shop interiors and verify accessibility with the venue on arrival.',
+    stay: 'Where to stay', stayText: 'For daytime visits, accommodation around central Vientiane and Lane Xang Avenue reduces transfers. For an evening market walk, consider the Mekong riverfront area. Compare real walking routes, access needs and return transport before booking; this guide does not endorse a specific hotel.',
+    reviews: 'Visitor reviews', reviewText: 'For current visitor comments and rating counts, open the destination’s own Google Maps listing. Ratings are dynamic and have not been independently synchronized for these new guide pages; no invented rating is displayed.',
+    direction: 'Address and navigation', compare: 'Two separate market locations', nearby: 'Explore nearby',
+  },
+  zh: {
+    discover: '探索市场', tips: '出发前建议', highlights: '景区特色', hours: '开放时间', hoursText: '本站 2026 年 10 月资料记录：Talat Sao 早市参考时段约为 07:00–17:00，湄公河夜市约为 18:00–22:00。这不是实时营业状态。摊位、商场店铺与节假日时间可能不同，出发前请再次核对。',
+    tickets: '门票与消费', ticketText: '一般浏览市场交易区域无需购票，商品、餐饮、交通及个别服务另行收费。商品价格随商户变化，建议购买前比较标价和品质。',
+    transport: '交通方式', transportText: '前往早市请导航至 Lane Xang 大道与 Khu Vieng 路交界处。住在市中心可按实际距离步行，也可选择嘟嘟车或网约车。夜市则应单独导航至 Chao Anouvong Park 附近湄公河岸，不能用同一市场定位。',
+    cautions: '游览须知', cautionText: '繁忙通道中保管随身物品，建筑之间步行注意防晒；部分通道可能拥挤或不平整。拍摄人物、商店内部或商品前先询问，行动不便者应在现场核实入口及无障碍情况。',
+    stay: '住宿建议', stayText: '以早市购物为主，可考虑万象市中心、Lane Xang 大道一带的住宿；若想晚间逛夜市，可比较湄公河岸附近住宿。订房前核对实际步行路线、返程交通与设施，不在此虚构酒店推荐。',
+    reviews: '游客评价', reviewText: '请通过对应景点的 Google 地图页面查看最新游客评论及评分数量。新专题未单独同步动态评分，因此不展示未经核实的分数。',
+    direction: '交通指南与地址', compare: '两座市场的独立位置', nearby: '探索周边',
+  },
+  th: {
+    discover: 'สำรวจตลาด', tips: 'คำแนะนำก่อนเที่ยว', highlights: 'จุดเด่นของสถานที่', hours: 'เวลาเปิด', hoursText: 'ข้อมูลอ้างอิงเดือนตุลาคม 2026 ระบุตลาดเช้าประมาณ 07:00–17:00 และตลาดกลางคืนริมโขงประมาณ 18:00–22:00 ไม่ใช่สถานะเปิดแบบเรียลไทม์ ร้านค้าแต่ละแห่งและวันหยุดอาจมีเวลาแตกต่างกัน',
+    tickets: 'ค่าเข้าและค่าใช้จ่าย', ticketText: 'โดยทั่วไปเดินชมพื้นที่ตลาดได้ฟรี แต่ต้องชำระค่าสินค้า อาหาร การเดินทาง และบริการของเอกชนแยกต่างหาก ควรเปรียบเทียบราคาและคุณภาพก่อนซื้อ',
+    transport: 'การเดินทาง', transportText: 'ตลาดเช้าอยู่บริเวณถนนล้านช้างตัดถนนคูเวียง สามารถเดินจากที่พักกลางเมืองตามระยะทางหรือนั่งตุ๊กตุ๊กและรถผ่านแอป ส่วนตลาดกลางคืนอยู่ริมแม่น้ำโขงใกล้สวนเจ้าอนุวงศ์ ต้องใช้พิกัดแยกกัน',
+    cautions: 'ข้อควรรู้', cautionText: 'รักษาของมีค่าในทางเดินที่มีคนมาก ป้องกันแดดระหว่างอาคาร บางทางอาจไม่เรียบหรือแออัด ขออนุญาตก่อนถ่ายภาพผู้อื่นและตรวจทางเข้าที่เหมาะกับการเดินทางของตน',
+    stay: 'คำแนะนำที่พัก', stayText: 'หากเน้นตลาดเช้าควรเปรียบเทียบที่พักในใจกลางเวียงจันทน์ใกล้ถนนล้านช้าง หากอยากเดินตลาดเย็นให้พิจารณาย่านริมโขง ตรวจเส้นทางเดินกลับและสิ่งอำนวยความสะดวกก่อนจอง',
+    reviews: 'รีวิวผู้มาเยือน', reviewText: 'เปิดหน้าสถานที่แต่ละแห่งใน Google Maps เพื่อดูรีวิวและจำนวนคะแนนล่าสุด คู่มือใหม่นี้ไม่ได้ซิงก์คะแนนแบบสด จึงไม่แสดงตัวเลขที่ยังไม่ได้ตรวจสอบ',
+    direction: 'ที่อยู่และแผนที่', compare: 'ตลาดสองแห่งอยู่คนละจุด', nearby: 'เที่ยวใกล้เคียง',
+  },
+  lo: {
+    discover: 'ສຳຫຼວດຕະຫຼາດ', tips: 'ຄຳແນະນຳກ່ອນທ່ຽວ', highlights: 'ຈຸດເດັ່ນ', hours: 'ເວລາເປີດ', hoursText: 'ຂໍ້ມູນອ້າງອີງເດືອນຕຸລາ 2026 ລະບຸຕະຫຼາດເຊົ້າປະມານ 07:00–17:00 ແລະ ຕະຫຼາດກາງຄືນປະມານ 18:00–22:00. ບໍ່ແມ່ນສະຖານະເປີດແບບທັນທີ; ແຕ່ລະຮ້ານອາດມີເວລາຕ່າງກັນ.',
+    tickets: 'ຄ່າເຂົ້າ ແລະ ຄ່າໃຊ້ຈ່າຍ', ticketText: 'ໂດຍທົ່ວໄປເຂົ້າເບິ່ງຕະຫຼາດໄດ້ຟຣີ ແຕ່ຕ້ອງຈ່າຍຄ່າສິນຄ້າ ອາຫານ ການເດີນທາງ ແລະ ບໍລິການແຍກ. ປຽບທຽບລາຄາກ່ອນຊື້.',
+    transport: 'ວິທີເດີນທາງ', transportText: 'ຕະຫຼາດເຊົ້າຢູ່ບໍລິເວນຖະໜົນລ້ານຊ້າງຕັດຄູວຽງ. ອາດຍ່າງຈາກທີ່ພັກກາງເມືອງ ຫຼື ໃຊ້ລົດຕຸກຕຸກ. ຕະຫຼາດກາງຄືນຢູ່ແຄມຂອງໃກ້ສວນເຈົ້າອານຸວົງ ໃຊ້ຈຸດແຜນທີ່ແຍກກັນ.',
+    cautions: 'ຂໍ້ຄວນຮູ້', cautionText: 'ຮັກສາຊັບສິນໃນບ່ອນຄົນຫຼາຍ ກຽມປ້ອງກັນແດດ ແລະ ສັງເກດທາງຍ່າງ. ຂໍອະນຸຍາດກ່ອນຖ່າຍຮູບຜູ້ຄົນ ແລະ ກວດທາງເຂົ້າຕາມສະພາບຈິງ.',
+    stay: 'ຄຳແນະນຳທີ່ພັກ', stayText: 'ຖ້າຈະໄປຕະຫຼາດເຊົ້າ ລອງເບິ່ງທີ່ພັກກາງວຽງຈັນໃກ້ຖະໜົນລ້ານຊ້າງ. ສຳລັບຕະຫຼາດກາງຄືນ ລອງເບິ່ງຍ່ານແຄມຂອງ. ກວດເສັ້ນທາງ ແລະ ສິ່ງອຳນວຍຄວາມສະດວກກ່ອນຈອງ.',
+    reviews: 'ຄຳຄິດເຫັນຜູ້ຢ້ຽມຢາມ', reviewText: 'ເບິ່ງຄຳຄິດເຫັນ ແລະ ຄະແນນຫຼ້າສຸດໃນ Google Maps ຂອງແຕ່ລະສະຖານທີ່. ຄູ່ມືນີ້ບໍ່ໄດ້ດຶງຄະແນນສົດ ຈຶ່ງບໍ່ສະແດງໂຕເລກທີ່ຍັງບໍ່ໄດ້ກວດ.',
+    direction: 'ທີ່ຢູ່ ແລະ ແຜນທີ່', compare: 'ສອງຕະຫຼາດຢູ່ຄົນລະບ່ອນ', nearby: 'ທ່ຽວໃກ້ຄຽງ',
+  },
+};

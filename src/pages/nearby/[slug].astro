@@ -1,0 +1,7 @@
+---
+import NearbyPage from '../../components/NearbyPage.astro';
+import { nearbySlugs } from '../../lib/nearby';
+export function getStaticPaths() { return nearbySlugs.map(slug => ({ params: { slug } })); }
+const { slug } = Astro.params;
+---
+<NearbyPage lang="lo" slug={slug as (typeof nearbySlugs)[number]}/>

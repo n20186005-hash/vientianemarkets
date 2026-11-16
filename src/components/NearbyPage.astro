@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { nearby, nearbySlugs, type NearbySlug } from '../lib/nearby';
+import type { GuideLang } from '../lib/guides';
+import { DOMAIN, useTranslations } from '../i18n/ui';
+import { breadcrumbSchema } from '../lib/schema';
+interface Props { lang: GuideLang; slug: NearbySlug }
+const { lang, slug } = Astro.props;
+const p = nearby[slug];
+const d = p.details[lang];
+const base = lang === 'lo' ? '' : `/${lang}`;
+const canonical = `${DOMAIN}${base}/nearby/${slug}/`;
+const langs = ['lo', 'en', 'zh', 'th'] as const;
+const alternates = langs.map(l => ({ hreflang: l === 'zh' ? 'zh-CN' : l, href: `${DOMAIN}${l === 'lo' ? '' : `/${l}`}/nearby/${slug}/` }));
+alternates.push({ hreflang: 'x-default', href: `${DOMAIN}/nearby/${slug}/` });
+const t = useTranslations(lang);
+const headings = {
+  en: ['Discover', 'Visit tips', 'Highlights', 'About and management', 'Basic information', 'Opening hours', 'Admission', 'Getting here', 'History', 'Architecture and cultural meaning', 'Suggested route', 'Visitor notes', 'Photography', 'Where to stay', 'Visitor opinions', 'Frequently asked questions', 'Directions and map', 'Other nearby places'],
+  zh: ['探索景点', '游览建议', '景点特色', '关于景点与管理主体', '基本资料', '开放时间', '门票价格', '交通方式', '历史背景', '建筑与文化特色', '游览路线', '游览须知', '拍照机位', '住宿建议', '游客评价', '常见问题', '交通指南与地图', '更多周边景点'],
+  th: ['สำรวจสถานที่', 'คำแนะนำ', 'จุดเด่น', 'เกี่ยวกับสถานที่และผู้ดูแล', 'ข้อมูลพื้นฐาน', 'เวลาเปิด', 'ค่าเข้า', 'การเดินทาง', 'ประวัติ', 'สถาปัตยกรรมและวัฒนธรรม', 'เส้นทางแนะนำ', 'ข้อควรรู้', 'จุดถ่ายภาพ', 'ที่พัก', 'รีวิว', 'คำถามที่พบบ่อย', 'ที่อยู่และแผนที่', 'สถานที่ใกล้เคียง'],
+  lo: ['ສຳຫຼວດ', 'ຄຳແນະນຳ', 'ຈຸດເດັ່ນ', 'ກ່ຽວກັບສະຖານທີ່ ແລະ ຜູ້ດູແລ', 'ຂໍ້ມູນພື້ນຖານ', 'ເວລາເປີດ', 'ຄ່າເຂົ້າ', 'ວິທີເດີນທາງ', 'ປະຫວັດ', 'ສະຖາປັດຕະຍະກຳ ແລະ ວັດທະນະທຳ', 'ເສັ້ນທາງແນະນຳ', 'ຂໍ້ຄວນຮູ້', 'ຈຸດຖ່າຍຮູບ', 'ທີ່ພັກ', 'ຄຳຄິດເຫັນ', 'ຄຳຖາມ', 'ທີ່ຢູ່ ແລະ ແຜນທີ່', 'ບ່ອນທ່ຽວໃກ້ຄຽງ'],
+}[lang];
+const messages = {
+  en: { management: 'The destination has its own operating or religious institution. This independent market guide does not manage it. The applicable on-site authority and rules should be followed; no unverified operator name is assigned.', hours: 'Check the destination’s own official source or on-site notice for current hours and closures.', tickets: 'Admission policies and any exhibition or upper-level fees may change. Check current prices directly before visiting.', stay: 'A central Vientiane hotel is a practical base for combining this stop with Talat Sao. Compare actual routes, access needs and transport before booking.', reviews: 'See current visitor reviews on the specific Google Maps place listing. This page does not publish an unverified rating.', note: 'Follow site signage, respect staff instructions and keep walkways clear. Ask before photographing people or sensitive areas.' },
+  zh: { management: '本景点有其所属运营或宗教管理主体，本站不参与管理。应遵守现场管理机构及规则；在缺乏可靠证明时不填入未经核实的具体机构名称。', hours: '开放时间与临时关闭情况，请根据景点独立官方资料及现场公告核实。', tickets: '入场、展区或登高收费可能调整，出发前请按现场公布价格核实。', stay: '万象市中心住宿适合把本景点与 Talat Sao 安排在同一天；订房前比较实际路线、无障碍设施及返程交通。', reviews: '最新游客评价请查看该景点独立的 Google 地图地点页；本页不展示未经核实的评分。', note: '遵守现场指示，保持通道畅通；拍摄人物或敏感区域前先询问。' },
+  th: { management: 'สถานที่มีผู้ดำเนินงานหรือหน่วยงานศาสนาของตนเอง เว็บไซต์คู่มือนี้ไม่ได้บริหารสถานที่ โปรดปฏิบัติตามกฎ ณ จุดเยี่ยมชม โดยไม่ระบุชื่อผู้ดูแลที่ยังไม่มีหลักฐาน', hours: 'ตรวจเวลาทำการและวันปิดจากแหล่งข้อมูลทางการของสถานที่หรือประกาศ ณ จุดเยี่ยมชม', tickets: 'ค่าเข้า พื้นที่จัดแสดง หรือจุดชมวิวอาจเปลี่ยนได้ ตรวจราคาปัจจุบันก่อนเดินทาง', stay: 'ที่พักกลางเวียงจันทน์เหมาะกับการเที่ยวสถานที่นี้ร่วมกับตลาดเช้า เปรียบเทียบเส้นทางและการเดินทางกลับก่อนจอง', reviews: 'ดูรีวิวล่าสุดจากรายการ Google Maps ของสถานที่โดยตรง คู่มือนี้ไม่แสดงคะแนนที่ยังไม่ได้ตรวจสอบ', note: 'ทำตามป้ายและคำแนะนำของเจ้าหน้าที่ ไม่ขวางทางเดิน ขออนุญาตก่อนถ่ายภาพผู้อื่น' },
+  lo: { management: 'ສະຖານທີ່ມີຜູ້ດຳເນີນງານ ຫຼື ອົງການທາງສາສະໜາຂອງຕົນ. ເວັບໄຊຄູ່ມືນີ້ບໍ່ໄດ້ບໍລິຫານ. ຄວນປະຕິບັດຕາມກົດຂອງສະຖານທີ່.', hours: 'ກວດເວລາເປີດ ແລະ ວັນປິດຈາກແຫຼ່ງທາງການ ຫຼື ປ້າຍປະກາດ.', tickets: 'ຄ່າເຂົ້າ ຫຼື ຄ່າບໍລິການອາດປ່ຽນໄດ້ ຄວນກວດລາຄາກ່ອນໄປ.', stay: 'ທີ່ພັກກາງວຽງຈັນສະດວກສຳລັບທ່ຽວບ່ອນນີ້ຮ່ວມກັບຕະຫຼາດເຊົ້າ. ກວດທາງເດີນ ແລະ ລົດກັບກ່ອນຈອງ.', reviews: 'ເບິ່ງຄຳຄິດເຫັນໃໝ່ຈາກ Google Maps ຂອງສະຖານທີ່ໂດຍກົງ. ບໍ່ສະແດງຄະແນນທີ່ຍັງບໍ່ໄດ້ກວດ.', note: 'ປະຕິບັດຕາມປ້າຍ ແລະ ພະນັກງານ. ຂໍອະນຸຍາດກ່ອນຖ່າຍຮູບຜູ້ຄົນ.' },
+}[lang];
+const specificManagement = slug === 'cope-visitor-centre' ? {
+  en: 'The public visitor centre is operated by COPE Laos as part of its rehabilitation-awareness work, within the Centre for Medical Rehabilitation grounds. Follow the visitor centre team’s directions and respect clinical privacy.',
+  zh: 'COPE 游客中心由 COPE Laos 运营，设在医疗康复中心院内，承担康复和未爆弹影响的公众教育工作。参观请遵守中心人员指引，并尊重医疗区域隐私。',
+  th: 'ศูนย์ผู้เยี่ยมชมดำเนินงานโดย COPE Laos ภายในพื้นที่ Centre for Medical Rehabilitation เพื่อให้ความรู้ด้านการฟื้นฟู โปรดทำตามคำแนะนำและเคารพความเป็นส่วนตัวของผู้รับบริการ',
+  lo: 'ສູນຜູ້ຢ້ຽມຊົມດຳເນີນງານໂດຍ COPE Laos ຢູ່ໃນພື້ນທີ່ສູນຟື້ນຟູການແພດ ເພື່ອໃຫ້ຄວາມຮູ້. ຄວນເຄົາລົບຄວາມເປັນສ່ວນຕົວຂອງຜູ້ຮັບບໍລິການ.',
+}[lang] : messages.management;
+const schema = [{ '@context':'https://schema.org', '@type':'TouristAttraction', name:p.name, description:d.introduction, url:canonical, hasMap:p.map, address:{ '@type':'PostalAddress', streetAddress:p.address, addressLocality:'Vientiane', addressCountry:'LA' } }, breadcrumbSchema([{name:t('nav.title'),url:`${DOMAIN}${base}/`},{name:d.title,url:canonical}],`${canonical}#breadcrumb`)];
+const others = nearbySlugs.filter(s => s !== slug);
+---
+<Layout title={`${d.title} | Vientiane Markets Guide`} description={d.introduction} canonical={canonical} alternates={alternates} schema={schema}>
+  <Header lang={lang}/>
+  <main>
+    <div class="mx-auto max-w-5xl px-4 py-4 text-sm"><a class="text-mekong-blue" href={`${base}/`}>{t('nav.title')}</a> / {d.title}</div>
+    <header class="bg-gradient-to-br from-mekong-blue to-mekong-teal text-white"><div class="mx-auto max-w-5xl px-4 py-14"><p class="text-sm text-mekong-gold">VIENTIANE · LAOS</p><h1 class="mt-3 text-4xl font-bold">{d.title}</h1><p class="mt-3 text-lg text-white/85">{d.subtitle}</p><p class="mt-4 max-w-3xl">{d.introduction}</p><a class="mt-6 inline-flex rounded-lg bg-mekong-gold px-5 py-3 font-semibold text-mekong-ink" href={p.map} target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div></header>
+    <div class="mx-auto max-w-5xl space-y-10 px-4 py-12">
+      <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[0]}</h2><p class="mt-3 leading-8">{d.introduction}</p><h3 class="mt-5 text-lg font-bold">{headings[1]}</h3><p class="mt-2 leading-8">{d.visiting}</p><h3 class="mt-5 text-lg font-bold">{headings[2]}</h3><p class="mt-2 leading-8">{d.architecture}</p></section>
+      <section class="rounded-2xl border bg-white p-7"><h2 class="text-2xl font-bold text-mekong-ink">{headings[3]}</h2><p class="mt-3 leading-8">{specificManagement}</p></section>
+      <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[4]}</h2><dl class="mt-3 grid grid-cols-[auto_1fr] gap-x-6 gap-y-3 rounded-xl border bg-white p-5"><dt class="font-semibold">{d.title}</dt><dd>{d.subtitle}</dd><dt class="font-semibold">{headings[16]}</dt><dd>{p.address}</dd></dl></section>
+      {[[5,messages.hours],[6,messages.tickets],[7,d.route],[8,d.history],[9,d.architecture]].map(([i,body]) => <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[i as number]}</h2><p class="mt-3 leading-8 text-zinc-700">{body}</p></section>)}
+      <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[10]}</h2><ol class="mt-4 space-y-3"><li class="flex gap-3"><span class="rounded-full bg-mekong-blue px-3 py-1 text-white">1</span><p>{d.route}</p></li><li class="flex gap-3"><span class="rounded-full bg-mekong-blue px-3 py-1 text-white">2</span><p>{d.visiting}</p></li><li class="flex gap-3"><span class="rounded-full bg-mekong-blue px-3 py-1 text-white">3</span><p>{d.photo}</p></li></ol></section>
+      {[[11,messages.note],[12,d.photo],[13,messages.stay],[14,messages.reviews],[15,d.faq]].map(([i,body]) => <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[i as number]}</h2><p class="mt-3 leading-8 text-zinc-700">{body}</p></section>)}
+      <section class="rounded-2xl bg-zinc-100 p-6"><h2 class="text-2xl font-bold text-mekong-ink">{headings[16]}</h2><p class="mt-3">{p.address}</p><a class="mt-4 inline-block rounded-lg bg-mekong-blue px-5 py-3 font-semibold text-white" href={p.map} target="_blank" rel="noopener noreferrer">Google Maps · {p.name} ↗</a><p class="mt-4 text-sm"><a class="text-mekong-blue underline" href={p.source} target="_blank" rel="noopener noreferrer">Source / 资料来源 ↗</a> · 2026-11-16</p></section>
+      <section><h2 class="text-2xl font-bold text-mekong-ink">{headings[17]}</h2><div class="mt-4 grid gap-4 sm:grid-cols-3"><a class="rounded-xl border bg-white p-4 text-mekong-blue" href={`${base}/talat-sao/`}>Talat Sao →</a>{others.map(s => <a class="rounded-xl border bg-white p-4 text-mekong-blue" href={`${base}/nearby/${s}/`}>{nearby[s].details[lang].title} →</a>)}</div></section>
+    </div>
+  </main>
+  <Footer lang={lang}/>
+</Layout>
