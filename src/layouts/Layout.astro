@@ -89,13 +89,29 @@ const jsonLd = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HXM22WWPKP');
+    <script is:inline>
+      (function () {
+        function enableAnalytics() {
+          if (window.__talatAnalyticsLoaded) return;
+          window.__talatAnalyticsLoaded = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', 'G-HXM22WWPKP');
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
+          document.head.appendChild(script);
+        }
+        try {
+          var consent = JSON.parse(localStorage.getItem('cookie-consent') || 'null');
+          if (consent && consent.analytics === true) enableAnalytics();
+        } catch (_) {}
+        window.addEventListener('talat-consent-changed', function (event) {
+          if (event.detail && event.detail.analytics === true) enableAnalytics();
+          else if (window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
+        });
+      })();
     </script>
   </head>
   <body class="bg-zinc-50 text-zinc-900 font-sans antialiased selection:bg-mekong-blue selection:text-white leading-relaxed">

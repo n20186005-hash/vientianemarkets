@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations, languages } from '../../i18n/ui';
+import { legalDetails } from '../../lib/legalDetails';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -18,12 +19,13 @@ const t = useTranslations(lang);
     <h1 class="text-3xl font-bold text-zinc-900 mb-2">{t('footer.cookie')}</h1>
     <p class="text-sm text-zinc-500 mb-6">{t('legal.cookieUpdated')}</p>
     <p class="text-zinc-600 leading-relaxed mb-10">{t('legal.cookieDesc')}</p>
+    <p class="rounded-xl bg-mekong-blue/5 p-5 text-zinc-700 leading-relaxed mb-8">{legalDetails[lang].cookieNotice}</p>
 
     <div
       x-data="{
         necessary: true,
-        analytics: true,
-        pref: true,
+        analytics: false,
+        pref: false,
         marketing: false,
         saved: false,
         init() {
@@ -33,7 +35,9 @@ const t = useTranslations(lang);
           } catch (e) {}
         },
         save() {
-          localStorage.setItem('cookie-consent', JSON.stringify({ analytics: this.analytics, pref: this.pref, marketing: this.marketing }));
+          const consent = { analytics: this.analytics, pref: this.pref, marketing: this.marketing };
+          localStorage.setItem('cookie-consent', JSON.stringify(consent));
+          window.dispatchEvent(new CustomEvent('talat-consent-changed', { detail: consent }));
           this.saved = true;
           setTimeout(() => this.saved = false, 2500);
         },

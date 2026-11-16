@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { getLangFromUrl, useTranslations, languages } from '../../i18n/ui';
+import { legalDetails } from '../../lib/legalDetails';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({ params: { lang } }));
@@ -10,7 +11,7 @@ export function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const s = t('legal.termsSections');
+const details = legalDetails[lang].terms;
 ---
 
 <Layout title={t('footer.termsTitle') as string} description={t('footer.termsTitle') as string}>
@@ -20,24 +21,7 @@ const s = t('legal.termsSections');
     <p class="text-sm text-zinc-500 mb-6">{t('legal.termsUpdated')}</p>
     <p class="text-zinc-600 leading-relaxed mb-10">{t('legal.termsAgree')}</p>
 
-    <div class="space-y-8">
-      <section>
-        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.contentTitle}</h2>
-        <p class="text-zinc-600 leading-relaxed">{s.contentBody}</p>
-      </section>
-      <section>
-        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.accuracyTitle}</h2>
-        <p class="text-zinc-600 leading-relaxed">{s.accuracyBody}</p>
-      </section>
-      <section>
-        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.ipTitle}</h2>
-        <p class="text-zinc-600 leading-relaxed">{s.ipBody}</p>
-      </section>
-      <section>
-        <h2 class="text-xl font-semibold text-zinc-900 mb-3">{s.liabilityTitle}</h2>
-        <p class="text-zinc-600 leading-relaxed">{s.liabilityBody}</p>
-      </section>
-    </div>
+    <div class="space-y-8">{details.map(section => <section><h2 class="text-xl font-semibold text-zinc-900 mb-3">{section.title}</h2><p class="text-zinc-600 leading-relaxed">{section.body}</p></section>)}</div>
   </main>
   <Footer />
 </Layout>
