@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import type { GuideLang } from '../lib/guides';
+interface Props { lang: GuideLang }
+const { lang } = Astro.props;
+const content = {
+  zh: { title:'资料来源与信息核实', project:'关于本项目', about:'本站以独立、非营利方式整理永珍早市及夜市的旅游资料，帮助游客规划行程。网站与任何政府机构或官方组织均无隶属关系。', checked:'信息核实记录', checkedBody:'现有景点基础资料的最后核实记录为 2026 年 10 月。营业时间、门票和交通可能变化，出发前请以现场公告为准。', references:'参考资料', maps:'景点位置与路线请使用相应景点页面的独立 Google Maps 链接。' },
+  en: { title:'Sources and information checks', project:'About this project', about:'This independent, non-profit guide brings together visitor information for Talat Sao and Vientiane Night Market. It is not affiliated with any government agency or official organization.', checked:'Verification record', checkedBody:'The existing core visitor information was last checked in October 2026. Hours, entry fees and transport may change; check on-site notices before travelling.', references:'Reference sources', maps:'Use each attraction page’s own Google Maps link for its location and directions.' },
+  th: { title:'แหล่งข้อมูลและการตรวจสอบ', project:'เกี่ยวกับโครงการ', about:'คู่มืออิสระไม่แสวงหากำไรนี้รวบรวมข้อมูลท่องเที่ยวตลาดเช้าและตลาดกลางคืนเวียงจันทน์ โดยไม่มีความเกี่ยวข้องกับหน่วยงานรัฐหรือองค์กรทางการ', checked:'บันทึกการตรวจสอบข้อมูล', checkedBody:'ข้อมูลพื้นฐานได้รับการตรวจสอบครั้งล่าสุดในเดือนตุลาคม 2026 เวลาเปิด ค่าเข้า และการเดินทางอาจเปลี่ยนแปลง โปรดตรวจประกาศ ณ สถานที่', references:'แหล่งอ้างอิง', maps:'ใช้ลิงก์ Google Maps เฉพาะของแต่ละสถานที่เพื่อดูตำแหน่งและเส้นทาง' },
+  lo: { title:'ແຫຼ່ງຂໍ້ມູນ ແລະ ການກວດສອບ', project:'ກ່ຽວກັບໂຄງການ', about:'ຄູ່ມືອິດສະລະບໍ່ຫວັງຜົນກຳໄລນີ້ຮວບຮວມຂໍ້ມູນທ່ອງທ່ຽວຕະຫຼາດເຊົ້າ ແລະ ຕະຫຼາດກາງຄືນວຽງຈັນ. ບໍ່ຂຶ້ນກັບໜ່ວຍງານລັດ.', checked:'ບັນທຶກການກວດສອບ', checkedBody:'ຂໍ້ມູນພື້ນຖານໄດ້ກວດສອບຫຼ້າສຸດໃນເດືອນຕຸລາ 2026. ເວລາເປີດ ຄ່າເຂົ້າ ແລະ ການເດີນທາງອາດປ່ຽນແປງ.', references:'ແຫຼ່ງອ້າງອີງ', maps:'ໃຊ້ລິ້ງ Google Maps ຂອງແຕ່ລະສະຖານທີ່ເພື່ອເບິ່ງທີ່ຕັ້ງ ແລະ ເສັ້ນທາງ.' },
+}[lang];
+---
+<Layout title={`${content.title} | Vientiane Markets Guide`} description={content.about}>
+  <Header lang={lang}/>
+  <main class="mx-auto max-w-4xl space-y-10 px-4 py-14">
+    <h1 class="text-3xl font-bold text-mekong-ink">{content.title}</h1>
+    <section><h2 class="text-xl font-bold">{content.project}</h2><p class="mt-3 leading-8 text-zinc-700">{content.about}</p></section>
+    <section><h2 class="text-xl font-bold">{content.checked}</h2><p class="mt-3 leading-8 text-zinc-700">{content.checkedBody}</p></section>
+    <section><h2 class="text-xl font-bold">{content.references}</h2><p class="mt-3 leading-8 text-zinc-700">{content.maps}</p><ul class="mt-4 list-disc space-y-2 pl-6 text-mekong-blue"><li><a class="underline" href="https://www.tourismlaos.org/" target="_blank" rel="noopener noreferrer">Tourism Laos</a></li><li><a class="underline" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps</a></li></ul></section>
+  </main>
+  <Footer lang={lang}/>
+</Layout>
