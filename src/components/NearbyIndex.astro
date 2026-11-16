@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import { nearby, nearbySlugs } from '../lib/nearby';
+import { DOMAIN, useTranslations } from '../i18n/ui';
+import type { GuideLang } from '../lib/guides';
+interface Props { lang: GuideLang }
+const {lang} = Astro.props;
+const base = lang === 'lo' ? '' : `/${lang}`;
+const title = {en:'Vientiane attractions near Talat Sao',zh:'Talat Sao 周边景点与万象城市游览',th:'สถานที่เที่ยวเวียงจันทน์ใกล้ตลาดเช้า',lo:'ສະຖານທີ່ທ່ຽວວຽງຈັນໃກ້ຕະຫຼາດເຊົ້າ'}[lang];
+const intro = {en:'Explore individual temples, memorials, museums, markets and riverfront places. Some are central stops; others require a longer ride. Each listing has its own map search and practical visit notes.',zh:'从寺院、纪念碑、博物馆、市场到湄公河滨，按独立地点规划万象行程。部分地点位于市中心，另一些需要较长车程；每页均提供专属地图与游览提示。',th:'ค้นหาวัด อนุสาวรีย์ พิพิธภัณฑ์ ตลาด และริมแม่น้ำ แต่ละแห่งมีแผนที่เฉพาะ บางแห่งอยู่กลางเมือง บางแห่งต้องเดินทางไกล',lo:'ເລືອກທ່ຽວວັດ ອະນຸສາວະລີ ພິພິທະພັນ ຕະຫຼາດ ແລະ ແຄມຂອງ. ແຕ່ລະບ່ອນມີແຜນທີ່ສະເພາະ.'}[lang];
+const t = useTranslations(lang);
+const alternates = (['lo','en','zh','th'] as const).map(l=>({hreflang:l === 'zh'?'zh-CN':l,href:`${DOMAIN}${l === 'lo'?'':`/${l}`}/nearby/`}));
+alternates.push({hreflang:'x-default',href:`${DOMAIN}/nearby/`});
+---
+<Layout title={`${title} | Vientiane Markets Guide`} description={intro} canonical={`${DOMAIN}${base}/nearby/`} alternates={alternates}>
+  <Header lang={lang}/>
+  <main>
+    <section class="bg-gradient-to-br from-mekong-blue to-mekong-teal py-14 text-white"><div class="mx-auto max-w-6xl px-4"><a class="text-sm underline" href={`${base}/`}>{t('nav.title')}</a><h1 class="mt-4 text-4xl font-bold">{title}</h1><p class="mt-4 max-w-3xl leading-8">{intro}</p></div></section>
+    <section class="mx-auto max-w-6xl px-4 py-12"><div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{nearbySlugs.map(slug=>{const p=nearby[slug];const d=p.details[lang];return <article class="rounded-xl border bg-white p-5 shadow-sm"><h2 class="text-xl font-bold text-mekong-ink"><a href={`${base}/nearby/${slug}/`} class="hover:underline">{d.title}</a></h2><p class="mt-2 text-sm leading-6 text-zinc-700">{d.introduction}</p><div class="mt-4 flex flex-wrap gap-4 text-sm"><a class="font-semibold text-mekong-blue underline" href={`${base}/nearby/${slug}/`}>{lang==='zh'?'查看攻略':lang==='th'?'อ่านคู่มือ':lang==='lo'?'ອ່ານຄູ່ມື':'Read guide'} →</a><a class="text-mekong-blue underline" href={p.map} target="_blank" rel="noopener noreferrer">Google Maps</a></div></article>})}</div></section>
+  </main>
+  <Footer lang={lang}/>
+</Layout>

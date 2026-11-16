@@ -1,5 +1,6 @@
 import type { GuideLang } from './guides';
-export const nearbySlugs = ['patuxai', 'wat-si-saket', 'cope-visitor-centre'] as const;
+import { extraNearby, extraNearbySlugs } from './nearby-extra';
+export const nearbySlugs = ['patuxai', 'wat-si-saket', 'cope-visitor-centre', ...extraNearbySlugs] as const;
 export type NearbySlug = typeof nearbySlugs[number];
 type Place = { name: string; address: string; map: string; source: string; fact: string; details: Record<GuideLang, { title: string; subtitle: string; introduction: string; history: string; architecture: string; visiting: string; route: string; photo: string; faq: string }> };
 
@@ -31,4 +32,5 @@ export const nearby: Record<NearbySlug, Place> = {
       lo: { title: 'ສູນຜູ້ຢ້ຽມຊົມ COPE', subtitle: 'ຮຽນຮູ້ຜົນກະທົບຈາກລະເບີດບໍ່ທັນແຕກ ແລະ ການຟື້ນຟູ', introduction: 'ສູນ COPE ໃຫ້ຄວາມຮູ້ກ່ຽວກັບຜົນກະທົບຂອງລະເບີດບໍ່ທັນແຕກ ແລະ ວຽກຟື້ນຟູໃນລາວ.', history: 'COPE ສະໜັບສະໜູນການຟື້ນຟູ ແລະ ການເຄື່ອນໄຫວຂອງຄົນພິການ ລວມທັງຜູ້ໄດ້ຮັບຜົນກະທົບຈາກລະເບີດ.', architecture: 'ສູນຢູ່ໃນບໍລິເວນສູນຟື້ນຟູການແພດທີ່ຖະໜົນຄູວຽງ. ເຂົ້າຊົມສະເພາະພື້ນທີ່ນິທັດສະການ.', visiting: 'ກວດເວລາເປີດຈາກເວັບໄຊທາງການ ແລະ ເຄົາລົບຄວາມເປັນສ່ວນຕົວຂອງຜູ້ຮັບການຮັກສາ.', route: 'ຈາກຕະຫຼາດເຊົ້າ ໃຊ້ແຜນທີ່ COPE Visitor Centre ທີ່ຖະໜົນຄູວຽງ.', photo: 'ຖ່າຍຮູບສະເພາະພື້ນທີ່ທີ່ອະນຸຍາດ ບໍ່ຖ່າຍຜູ້ປ່ວຍ ຫຼື ຫ້ອງຮັກສາ.', faq: 'ເປັນການທ່ຽວໂຮງໝໍບໍ? ບໍ່ແມ່ນ ໃຫ້ເຂົ້າສະເພາະສູນຮຽນຮູ້ສາທາລະນະ.' },
     },
   },
+  ...extraNearby,
 };

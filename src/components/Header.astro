@@ -20,6 +20,7 @@ const legalBase = lang === 'lo' ? '/lo' : `/${lang}`;
     </a>
     <nav class="hidden items-center gap-6 text-sm font-medium text-zinc-700 md:flex">
       <a href={`${home}#market-core`} class="hover:text-mekong-blue">{t('nav.markets')}</a>
+      <a href={`${home}nearby/`} class="hover:text-mekong-blue">{lang === 'zh' ? '周边景点' : lang === 'th' ? 'ที่เที่ยวใกล้เคียง' : lang === 'lo' ? 'ບ່ອນທ່ຽວໃກ້ຄຽງ' : 'Explore'}</a>
       <a href={`${home}#map`} class="hover:text-mekong-blue">{t('nav.map')}</a>
       <a href={`${home}#faq`} class="hover:text-mekong-blue">{t('nav.faq')}</a>
       <a href={`${legalBase}/privacy`} class="hover:text-mekong-blue">{t('footer.privacy')}</a>

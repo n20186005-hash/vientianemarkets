@@ -1,0 +1,6 @@
+---
+import NearbyIndex from '../../../components/NearbyIndex.astro';
+export function getStaticPaths(){return (['en','zh','th'] as const).map(lang=>({params:{lang}}));}
+const {lang}=Astro.params;
+---
+<NearbyIndex lang={lang as 'en'|'zh'|'th'}/>
