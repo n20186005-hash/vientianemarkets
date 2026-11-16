@@ -28,6 +28,17 @@ const nmHref = `${base}/vientiane-night-market/`;
     </div>
   </div>
 </section>
+<section class="bg-zinc-50 py-12" aria-label="Nearby visits">
+  <div class="mx-auto max-w-6xl px-4">
+    <h2 class="text-2xl font-bold text-mekong-ink">{lang === 'zh' ? '周边游览与市场路线' : lang === 'th' ? 'เที่ยวใกล้ตลาดและเส้นทางแนะนำ' : lang === 'lo' ? 'ທ່ຽວໃກ້ຕະຫຼາດ ແລະ ເສັ້ນທາງ' : 'Nearby visits and market routes'}</h2>
+    <p class="mt-2 text-zinc-600">{lang === 'zh' ? '从市中心早市出发，结合交通攻略与傍晚的湄公河夜市。' : lang === 'th' ? 'เริ่มจากตลาดเช้ากลางเมือง แล้วใช้คู่มือเดินทางต่อไปตลาดริมโขงตอนเย็น' : lang === 'lo' ? 'ເລີ່ມຈາກຕະຫຼາດເຊົ້າ ແລະ ໄປຕະຫຼາດແຄມຂອງຕອນແລງ' : 'Start with central Talat Sao, then plan an evening visit to the Mekong riverfront.'}</p>
+    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+      <a class="rounded-xl border bg-white p-5 text-mekong-blue hover:border-mekong-blue" href={`${base}/guides/talat-sao-transport/`}>{guides[lang]['talat-sao-transport'].title} →</a>
+      <a class="rounded-xl border bg-white p-5 text-mekong-blue hover:border-mekong-blue" href={`${base}/guides/morning-vs-night-market/`}>{guides[lang]['morning-vs-night-market'].title} →</a>
+      <a class="rounded-xl border bg-white p-5 text-mekong-blue hover:border-mekong-blue" href={nmHref}>{t('markets.nightMarket.name')} →</a>
+    </div>
+  </div>
+</section>
 <section class="bg-white py-12" aria-label="Market guides">
   <div class="mx-auto max-w-6xl px-4">
     <h2 class="text-2xl font-bold text-mekong-ink">{lang === 'zh' ? '万象市场实用攻略' : lang === 'th' ? 'คู่มือเที่ยวตลาดเวียงจันทน์' : lang === 'lo' ? 'ຄູ່ມືທ່ຽວຕະຫຼາດວຽງຈັນ' : 'Vientiane market guides'}</h2>
