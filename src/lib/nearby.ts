@@ -1,8 +1,9 @@
 import type { GuideLang } from './guides';
+import { newNearby, newNearbySlugs } from './nearby-new';
 import { extraNearby, extraNearbySlugs } from './nearby-extra';
-export const nearbySlugs = ['patuxai', 'wat-si-saket', 'cope-visitor-centre', ...extraNearbySlugs] as const;
+export const nearbySlugs = ['patuxai', 'wat-si-saket', 'cope-visitor-centre', ...extraNearbySlugs, ...newNearbySlugs] as const;
 export type NearbySlug = typeof nearbySlugs[number];
-type Place = { name: string; address: string; map: string; source: string; fact: string; details: Record<GuideLang, { title: string; subtitle: string; introduction: string; history: string; architecture: string; visiting: string; route: string; photo: string; faq: string }> };
+type Place = { name: string; address: string; map: string; source: string; fact: string; details: Record<GuideLang, { title: string; subtitle: string; introduction: string; history: string; architecture: string; visiting: string; route: string; photo: string; faq: string; faqs?: [string,string][]; management?: string }> };
 
 export const nearby: Record<NearbySlug, Place> = {
   patuxai: {
@@ -33,4 +34,5 @@ export const nearby: Record<NearbySlug, Place> = {
     },
   },
   ...extraNearby,
+  ...newNearby,
 };

@@ -39,7 +39,7 @@ const nmHref = `${base}/vientiane-night-market/`;
       <a class="rounded-xl border bg-white p-5 text-mekong-blue hover:border-mekong-blue" href={nmHref}>{t('markets.nightMarket.name')} →</a>
     </div>
     <div class="mt-5 grid gap-4 sm:grid-cols-3">
-      {nearbySlugs.slice(0,3).map(slug => <a class="rounded-xl border bg-white p-5 hover:border-mekong-blue" href={`${base}/nearby/${slug}/`}><h3 class="font-semibold text-mekong-ink">{nearby[slug].details[lang].title}</h3><p class="mt-2 text-sm text-zinc-600">{nearby[slug].details[lang].subtitle}</p><span class="mt-3 inline-block text-sm font-semibold text-mekong-blue">→</span></a>)}
+      {[...nearbySlugs.slice(0,3), ...nearbySlugs.slice(-3)].map(slug => <a class="rounded-xl border bg-white p-5 hover:border-mekong-blue" href={`${base}/nearby/${slug}/`}><h3 class="font-semibold text-mekong-ink">{nearby[slug].details[lang].title}</h3><p class="mt-2 text-sm text-zinc-600">{nearby[slug].details[lang].subtitle}</p><span class="mt-3 inline-block text-sm font-semibold text-mekong-blue">→</span></a>)}
     </div>
     <a class="mt-6 inline-block rounded-lg bg-mekong-blue px-5 py-3 font-semibold text-white" href={`${base}/nearby/`}>{lang === 'zh' ? `查看全部 ${nearbySlugs.length} 个周边景点` : lang === 'th' ? `ดูสถานที่เที่ยวทั้งหมด ${nearbySlugs.length} แห่ง` : lang === 'lo' ? `ເບິ່ງສະຖານທີ່ທັງໝົດ ${nearbySlugs.length} ແຫ່ງ` : `Explore all ${nearbySlugs.length} nearby places`} →</a>
   </div>
